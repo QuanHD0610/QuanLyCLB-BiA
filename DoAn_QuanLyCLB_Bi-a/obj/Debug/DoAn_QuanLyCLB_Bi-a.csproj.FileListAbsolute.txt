@@ -1,0 +1,16 @@
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\bin\Debug\DoAn_QuanLyCLB_Bi-a.exe.config
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\bin\Debug\DoAn_QuanLyCLB_Bi-a.exe
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\bin\Debug\DoAn_QuanLyCLB_Bi-a.pdb
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi-a.csproj.AssemblyReference.cache
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.Form1.resources
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.Properties.Resources.resources
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi-a.csproj.GenerateResource.cache
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi-a.csproj.CoreCompileInputs.cache
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi-a.exe
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi-a.pdb
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.Form_Main.resources
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.Form_Menu.resources
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.form_TinhTrangBan.resources
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.form_LichSu.resources
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.form_KhachHang.resources
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.form_KHACHHANNG_THEM.resources
