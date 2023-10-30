@@ -15,11 +15,11 @@ namespace DoAn_QuanLyCLB_Bi_a
     public partial class form_LichSu : Form
     {
 
-        SqlConnection connection;
+        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-47T7FNC\\SQLEXPRESS;Initial Catalog=QLPHONGBIA;Integrated Security=True");
+        //SqlConnection connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");
 
         public form_LichSu()
         {
-            connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");
             InitializeComponent();
         }
         private void Load_dgv()
@@ -95,6 +95,11 @@ namespace DoAn_QuanLyCLB_Bi_a
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+        }
+
+        private void da_LichSu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
