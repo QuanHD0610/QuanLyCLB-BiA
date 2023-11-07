@@ -16,12 +16,20 @@ namespace DoAn_QuanLyCLB_Bi_a
 {
     public partial class Form_Menu : Form
     {
+<<<<<<< HEAD
         SqlConnection connection;
         DataSet ds;
         SqlDataAdapter da;
         public Form_Menu()
         {
             connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");
+=======
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-47T7FNC\\SQLEXPRESS;Initial Catalog=QLPHONGBIA;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");        DataSet ds;
+        SqlDataAdapter da;
+        public Form_Menu()
+        {
+>>>>>>> 551b4564107e5ab4be8d706b4d71d5cd90e5d6bc
             InitializeComponent();
         }
         public void Load_cboBan()

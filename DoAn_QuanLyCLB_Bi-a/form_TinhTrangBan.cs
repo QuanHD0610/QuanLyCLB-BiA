@@ -13,8 +13,13 @@ namespace DoAn_QuanLyCLB_Bi_a
 {
     public partial class form_TinhTrangBan : Form
     {
+<<<<<<< HEAD
         SqlConnection connection;
         DataSet ds =new DataSet();
+=======
+        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-47T7FNC\\SQLEXPRESS;Initial Catalog=QLPHONGBIA;Integrated Security=True");
+        //SqlConnection connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");
+>>>>>>> 551b4564107e5ab4be8d706b4d71d5cd90e5d6bc
         public form_TinhTrangBan()
         {
             connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");

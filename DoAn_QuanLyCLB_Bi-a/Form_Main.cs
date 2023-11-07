@@ -12,6 +12,8 @@ namespace DoAn_QuanLyCLB_Bi_a
 {
     public partial class Form_Main : Form
     {
+        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-47T7FNC\\SQLEXPRESS;Initial Catalog=QLPHONGBIA;Integrated Security=True");
+        //SqlConnection connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");
         public Form_Main()
         {
             InitializeComponent();
