@@ -76,8 +76,13 @@ namespace DoAn_QuanLyCLB_Bi_a
         private void btn_Thoat_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form1 form = new Form1();
+            Form_DangNhap form = new Form_DangNhap();
             form.ShowDialog();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
         }
     }
 }

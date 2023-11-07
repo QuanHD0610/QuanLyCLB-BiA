@@ -26,7 +26,7 @@ namespace DoAn_QuanLyCLB_Bi_a
         {
             connection.Open();
             // Thực hiện truy vấn SQL
-            string query = "SELECT * FROM HoaDon,DANGKY WHERE HOADON.MADON = DANGKY.MADON";
+            string query = "SELECT MACTHD,CTHOADON.MADON,MAKH,DICHVU.MADV,MABAN,TENDV,SOLUONG FROM CTHOADON,DANGKY,DICHVU WHERE CTHOADON.MADON = DANGKY.MADON AND DICHVU.MADV=DANGKY.MADV";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
 

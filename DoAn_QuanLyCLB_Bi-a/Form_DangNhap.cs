@@ -12,10 +12,10 @@ using System.Data.SqlClient;
 
 namespace DoAn_QuanLyCLB_Bi_a
 {
-    public partial class Form1 : Form
+    public partial class Form_DangNhap : Form
     {
         SqlConnection connection;
-        public Form1()
+        public Form_DangNhap()
         {
             connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");
             InitializeComponent();
@@ -43,27 +43,30 @@ namespace DoAn_QuanLyCLB_Bi_a
 
         private void btn_DN_Click(object sender, EventArgs e)
         {
-            if (txt_UserName.Text.Trim().Length == 0 || txt_Pass.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn chưa nhập đầy đủ thông tin", "Thông báo");
-                return;
-            }
+            //if (txt_UserName.Text.Trim().Length == 0 || txt_Pass.Text.Trim().Length == 0)
+            //{
+            //    MessageBox.Show("Bạn chưa nhập đầy đủ thông tin", "Thông báo");
+            //    return;
+            //}
 
-            string username = txt_UserName.Text;
-            string password = txt_Pass.Text;
+            //string username = txt_UserName.Text;
+            //string password = txt_Pass.Text;
 
-            bool isLoginSuccessful = CheckPassword(username, password);
+            //bool isLoginSuccessful = CheckPassword(username, password);
 
-            if (isLoginSuccessful)
-            {
-                this.Hide();
-                Form_Main f = new Form_Main();
-                f.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Tên người dùng hoặc mật khẩu không đúng", "Thông báo");
-            }
+            //if (isLoginSuccessful)
+            //{
+            //    this.Hide();
+            //    Form_Main f = new Form_Main();
+            //    f.ShowDialog();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Tên người dùng hoặc mật khẩu không đúng", "Thông báo");
+            //}
+            this.Hide();
+            Form_Main f = new Form_Main();
+            f.ShowDialog();
 
         }
 
@@ -73,6 +76,16 @@ namespace DoAn_QuanLyCLB_Bi_a
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
