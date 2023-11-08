@@ -13,13 +13,8 @@ namespace DoAn_QuanLyCLB_Bi_a
 {
     public partial class form_TinhTrangBan : Form
     {
-<<<<<<< HEAD
         SqlConnection connection;
         DataSet ds =new DataSet();
-=======
-        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-47T7FNC\\SQLEXPRESS;Initial Catalog=QLPHONGBIA;Integrated Security=True");
-        //SqlConnection connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");
->>>>>>> 551b4564107e5ab4be8d706b4d71d5cd90e5d6bc
         public form_TinhTrangBan()
         {
             connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");
@@ -45,7 +40,7 @@ namespace DoAn_QuanLyCLB_Bi_a
         }
         public void LoadDgv_Ban()
         {
-            string strselect = "SELECT MADON, KHACHHANG.MAKH, BANBIA.MABAN, TENKH, SDT, GIOVAO, TENBAN, TINHTRANG FROM DANGKY, KHACHHANG, BANBIA WHERE DANGKY.MABAN = BANBIA.MABAN AND DANGKY.MAKH = KHACHHANG.MAKH";
+            string strselect = "SELECT KHACHHANG.MAKH, BANBIA.MABAN, TENKH, SDT, GIOVAO, TENBAN, TINHTRANG FROM DANGKY, KHACHHANG, BANBIA WHERE DANGKY.MABAN = BANBIA.MABAN  and KHACHHANG.MAKH=DANGKY.MAKH";
             SqlDataAdapter da = new SqlDataAdapter(strselect, connection);
             da.Fill(ds, "BanBiA");
             dtv_DanhSachBan.DataSource = ds.Tables["BanBiA"];

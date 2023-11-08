@@ -1,4 +1,4 @@
-﻿USE MASTER
+﻿﻿USE MASTER
 GO
 CREATE DATABASE QLPHONGBIA
 GO
@@ -62,26 +62,27 @@ CREATE TABLE BANBIA
 	LOAIBAN NVARCHAR(50),
 	GIATIEN INT,
 	TINHTRANG NVARCHAR(30),
+	TINHTRANGTT NVARCHAR(50)
 )
 -----------------------------------------------------------------
 -- Thêm dữ liệu vào bảng BANBIA cho các loại bàn bi-a
-INSERT INTO BANBIA (MABAN, TENBAN, LOAIBAN, GIATIEN, TINHTRANG) VALUES
-    ('BB01', N'Bàn pool 1', N'Bi-a không lỗ', 10000, N'Trống'),
-    ('BB02', N'Bàn Carom 1', N'Bi-a không lỗ', 12000, N'Trống'),
-    ('BB03', N'Bàn Snooker 1', N'Bi-a không lỗ', 15000, N'Trống'),
-    ('BB04', N'Bàn pool 7', N'Bi-a lỗ', 20000, N'Trống'),
-    ('BB05', N'Bàn Carom 7', N'Bi-a lỗ', 22000, N'Trống'),
-    ('BB06', N'Bàn Snooker 7', N'Bi-a lỗ', 25000, N'Trống'),
-    ('BB07', N'Bàn Carom 2', N'Bi-a không lỗ', 12000, N'Trống'),
-    ('BB08', N'Bàn pool 2', N'Bi-a lỗ', 20000, N'Đang sử dụng'),
-    ('BB09', N'Bàn Snooker 2', N'Bi-a lỗ', 25000, N'Trống'),
-    ('BB10', N'Bàn pool 3', N'Bi-a lỗ', 20000, N'Trống'),
-    ('BB11', N'Bàn Snooker 3', N'Bi-a không lỗ', 15000, N'Đang sử dụng'),
-    ('BB12', N'Bàn pool 4', N'Bi-a lỗ', 20000, N'Trống'),
-    ('BB13', N'Bàn Snooker 4', N'Bi-a không lỗ', 15000, N'Trống'),
-    ('BB14', N'Bàn pool 5', N'Bi-a lỗ', 20000, N'Trống'),
-    ('BB15', N'Bàn Carom 3', N'Bi-a không lỗ', 12000, N'Trống'),
-    ('BB16', N'Bàn pool 6', N'Bi-a lỗ', 20000, N'Đang sử dụng');
+INSERT INTO BANBIA (MABAN, TENBAN, LOAIBAN, GIATIEN, TINHTRANG, TINHTRANGTT) VALUES
+    ('BB01', N'Bàn pool 1', N'Bi-a không lỗ', 10000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB02', N'Bàn Carom 1', N'Bi-a không lỗ', 12000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB03', N'Bàn Snooker 1', N'Bi-a không lỗ', 15000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB04', N'Bàn pool 7', N'Bi-a lỗ', 20000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB05', N'Bàn Carom 7', N'Bi-a lỗ', 22000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB06', N'Bàn Snooker 7', N'Bi-a lỗ', 25000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB07', N'Bàn Carom 2', N'Bi-a không lỗ', 12000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB08', N'Bàn pool 2', N'Bi-a lỗ', 20000, N'Đang sử dụng', N'Thanh toán đủ'),
+    ('BB09', N'Bàn Snooker 2', N'Bi-a lỗ', 25000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB10', N'Bàn pool 3', N'Bi-a lỗ', 20000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB11', N'Bàn Snooker 3', N'Bi-a không lỗ', 15000, N'Đang sử dụng', N'Thanh toán đủ'),
+    ('BB12', N'Bàn pool 4', N'Bi-a lỗ', 20000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB13', N'Bàn Snooker 4', N'Bi-a không lỗ', 15000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB14', N'Bàn pool 5', N'Bi-a lỗ', 20000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB15', N'Bàn Carom 3', N'Bi-a không lỗ', 12000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB16', N'Bàn pool 6', N'Bi-a lỗ', 20000, N'Đang sử dụng', N'Thanh toán đủ');
 
 SELECT*FROM BANBIA
 -----------------------------------------------------------------
@@ -111,12 +112,14 @@ INSERT INTO DICHVU (MADV, TENDV, GIA, SLKHO) VALUES
 GO
 CREATE TABLE DANGKY
 (
-	MADON NCHAR(10) NOT NULL PRIMARY KEY,
-	MAKH NCHAR(10),
-	MADV NCHAR(10),
-	MABAN NCHAR(10),
-	SOLUONG INT
+	MAKH NCHAR(10) NOT NULL,
+	MADV NCHAR(10)NOT NULL,
+	MABAN NCHAR(10)NOT NULL,
+	NGAYDANGKY DATETIME,
+	SOLUONG INT,
 )
+ALTER TABLE DANGKY
+ADD CONSTRAINT PK_DK PRIMARY KEY(MAKH,MADV,MABAN)
 
 GO
 ALTER TABLE DANGKY
@@ -131,59 +134,20 @@ ADD CONSTRAINT FK_DANGKY_BANBIA FOREIGN KEY(MABAN) REFERENCES BANBIA(MABAN)
 GO
 -----------------------------------------------------------------
 -- Thêm dữ liệu vào bảng DANGKY
-INSERT INTO DANGKY (MADON, MAKH, MADV, MABAN) VALUES
-    ('DK01', 'KH01', 'DV01', 'BB01'),
-    ('DK02', 'KH02', 'DV02', 'BB02'),
-    ('DK03', 'KH03', 'DV03', 'BB03'),
-    ('DK04', 'KH04', 'DV04', 'BB04'),
-    ('DK05', 'KH05', 'DV03', 'BB05'),
-    ('DK06', 'KH06', 'DV06', 'BB06'),
-    ('DK07', 'KH07', 'DV01', 'BB07'),
-    ('DK08', 'KH08', 'DV03', 'BB08'),
-    ('DK09', 'KH09', 'DV05', 'BB09'),
-    ('DK10', 'KH10', 'DV05', 'BB10');
+INSERT INTO DANGKY (MAKH, MADV, MABAN, NGAYDANGKY, SOLUONG) VALUES
+    ('KH01', 'DV01', 'BB01', GETDATE(), 2), -- Example with current date and quantity
+    ('KH02', 'DV02', 'BB02', GETDATE(), 3), -- Example with current date and quantity
+    ('KH03', 'DV03', 'BB03', GETDATE(), 1), -- Example with current date and quantity
+    ('KH04', 'DV04', 'BB04', GETDATE(), 4), -- Example with current date and quantity
+    ('KH05', 'DV03', 'BB05', GETDATE(), 2), -- Example with current date and quantity
+    ('KH06', 'DV06', 'BB06', GETDATE(), 3), -- Example with current date and quantity
+    ('KH07', 'DV01', 'BB07', GETDATE(), 2), -- Example with current date and quantity
+    ('KH08', 'DV03', 'BB08', GETDATE(), 1), -- Example with current date and quantity
+    ('KH09', 'DV05', 'BB09', GETDATE(), 4); -- Example with current date and quantity
 
 SELECT*FROM DANGKY
 -----------------------------------------------------------------
-
-CREATE TABLE CTHOADON
-(
-	MACTHD NCHAR(10) NOT NULL PRIMARY KEY,
-	MADON NCHAR(10),
-	TIENBAN INT,
-)
-
-ALTER TABLE CTHOADON
-ADD CONSTRAINT FK_CTHD_DK FOREIGN KEY(MADON) REFERENCES DANGKY(MADON)
------------------------------------------------------------------
--- Insert data into the CTHOADON table
-INSERT INTO CTHOADON (MACTHD, MADON, TIENBAN) VALUES
-    ('CTHD01', 'DK01', 25000),
-    ('CTHD02', 'DK02', 30000),
-    ('CTHD03', 'DK03', 35000),
-    ('CTHD04', 'DK04', 40000),
-    ('CTHD05', 'DK05', 45000);
-
------------------------------------------------------------------
-CREATE TABLE HOADON
-(
-	MAHD NCHAR(10) NOT NULL PRIMARY KEY,
-	MACTHD NCHAR(10),
-	MAKH NCHAR(10),
-	TONGTIEN INT ,
-	TINHTRANGTT NVARCHAR(20)
-)
-ALTER TABLE HOADON
-ADD CONSTRAINT FK_HD_DK FOREIGN KEY(MACTHD) REFERENCES CTHOADON(MACTHD)
------------------------------------------------------------------
-INSERT INTO HOADON (MAHD, MACTHD, MAKH, TONGTIEN, TINHTRANGTT) VALUES
-    ('HD01', 'CTHD01', 'KH01', 50000, N'Đã thanh toán'),
-    ('HD02', 'CTHD02', 'KH02', 60000, N'Chưa thanh toán'),
-    ('HD03', 'CTHD03', 'KH03', 70000, N'Đã thanh toán'),
-    ('HD04', 'CTHD04', 'KH04', 80000, N'Chưa thanh toán'),
-    ('HD05', 'CTHD05', 'KH05', 90000, N'Đã thanh toán');
------------------------------------------------------------------
-
+SELECT KHACHHANG.MAKH, BANBIA.MABAN, TENKH, SDT, GIOVAO, TENBAN, TINHTRANG FROM DANGKY, KHACHHANG, BANBIA WHERE DANGKY.MABAN = BANBIA.MABAN  and KHACHHANG.MAKH=DANGKY.MAKH
 -----------------------------------------------------------------
 CREATE TABLE GAYBIA
 (
@@ -233,20 +197,14 @@ INSERT INTO AUTHENTION(USERNAME, PASS) VALUES
 
 SELECT*FROM AUTHENTION
 
-SELECT SUM(TONGTIEN) AS TONGTIENNGAY 
-FROM HOADON
-
 
 SELECT*FROM KHACHHANG
 SELECT*FROM NHANVIEN
 SELECT*FROM DANGKY 
 SELECT*FROM BANBIA
 SELECT*FROM DICHVU
-SELECT*FROM HOADON
 
 
 SELECT*FROM DANGKY,KHACHHANG,BANBIA
 
-SELECT MADON,KHACHHANG.MAKH,BANBIA.MABAN,TENKH,SDT,GIOVAO,TENBAN,TINHTRANG FROM DANGKY,KHACHHANG,BANBIA WHERE DANGKY.MABAN=BANBIA.MABAN AND DANGKY.MAKH=KHACHHANG.MAKH
-
-SELECT MACTHD,CTHOADON.MADON,MAKH,DICHVU.MADV,MABAN,TENDV,SOLUONG FROM CTHOADON,DANGKY,DICHVU WHERE CTHOADON.MADON = DANGKY.MADON AND DICHVU.MADV=DANGKY.MADV
+SELECT MAKH,DICHVU.MADV,MABAN,TENDV,SOLUONG,NGAYDANGKY FROM DANGKY,DICHVU WHERE  DANGKY.MADV =DICHVU.MADV

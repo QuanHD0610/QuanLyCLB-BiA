@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
@@ -16,28 +15,30 @@ namespace DoAn_QuanLyCLB_Bi_a
 {
     public partial class Form_Menu : Form
     {
-<<<<<<< HEAD
+
         SqlConnection connection;
         DataSet ds;
         SqlDataAdapter da;
         public Form_Menu()
         {
             connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");
-=======
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-47T7FNC\\SQLEXPRESS;Initial Catalog=QLPHONGBIA;Integrated Security=True");
-        //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");        DataSet ds;
-        SqlDataAdapter da;
-        public Form_Menu()
-        {
->>>>>>> 551b4564107e5ab4be8d706b4d71d5cd90e5d6bc
+            //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-47T7FNC\\SQLEXPRESS;Initial Catalog=QLPHONGBIA;Integrated Security=True");
+            //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");        DataSet ds;
+            SqlDataAdapter da;
+
             InitializeComponent();
         }
+
         public void Load_cboBan()
         {
+            // Clear the existing items in the ComboBox
+            cbo_Ban.Items.Clear();
+
+            // Load the ComboBox with updated data
             DataSet ds = new DataSet();
 
-            // Define the SQL query
-            string strselect = "SELECT * FROM BANBIA where TinhTrang='Trống'";
+            // Define the SQL query to get data from your database
+            string strselect = "SELECT * FROM BANBIA WHERE TinhTrang=N'Trống'";
 
             // Create a SqlDataAdapter and fill the DataSet
             SqlDataAdapter da = new SqlDataAdapter(strselect, connection);
@@ -47,8 +48,8 @@ namespace DoAn_QuanLyCLB_Bi_a
             cbo_Ban.DataSource = ds.Tables["BANBIA"];
             cbo_Ban.DisplayMember = "TenBan";
             cbo_Ban.ValueMember = "MaBan";
-
         }
+    
         private void Form_Menu_Load(object sender, EventArgs e)
         {
             // Lấy giờ và phút hiện tại
@@ -60,7 +61,7 @@ namespace DoAn_QuanLyCLB_Bi_a
 
             // Đặt giá trị mặc định cho MaskedTextBox
             maks_time.Text = currentTime;
-
+            maks_time.ReadOnly = true;
             lstv_menu.View = View.Details;
             Load_cboBan();
         }
@@ -108,7 +109,7 @@ namespace DoAn_QuanLyCLB_Bi_a
         {
             string drinkName = "Nước ngọt Pessi";
             string drinkCode = "DV02";
-            ThemNuoc(drinkName,drinkCode);
+            ThemNuoc(drinkName, drinkCode);
         }
 
         private void btn_datSting_Click(object sender, EventArgs e)
@@ -214,45 +215,83 @@ namespace DoAn_QuanLyCLB_Bi_a
         }
         private void btn_datban_Click(object sender, EventArgs e)
         {
-            if (txt_SDT.Text.Length <= 0 || txt_TenKH.Text.Length <= 0 || txt_maKh.Text.Length <= 0)
+            if (txt_SDT.Text.Length <= 0 || txt_TenKH.Text.Length <= 0 || txt_makh.Text.Length <= 0)
             {
                 MessageBox.Show("Chưa nhập đủ thông tin khách hàng");
                 return;
             }
             try
             {
-                if (ktkhoa(txt_maKh.Text))
+                if (ktkhoa(txt_makh.Text))
                 {
                     connection.Open();
                     string insertString = "INSERT INTO KhachHang (MAKH, TENKH, SDT, GIOVAO) VALUES (@MaKh, @TenKH, @SDT, @GioVao)";
                     SqlCommand cmd = new SqlCommand(insertString, connection);
-                    cmd.Parameters.AddWithValue("@MaKh", txt_maKh.Text);
+                    cmd.Parameters.AddWithValue("@MaKh", txt_makh.Text);
                     cmd.Parameters.AddWithValue("@TenKH", txt_TenKH.Text);
                     cmd.Parameters.AddWithValue("@SDT", txt_SDT.Text);
                     cmd.Parameters.AddWithValue("@GioVao", maks_time.Text);
-                    cmd.ExecuteNonQuery();
-
-                    string insertDK = "INSERT INTO DANGKI (MADON, MAKH, MABAN, MADV) VALUES (@MADON, @MAKH, @MABAN @GioVao)";
-                    SqlCommand cmd1 = new SqlCommand(insertDK, connection);
-                    cmd.Parameters.AddWithValue("@MADON", txt_maKh.Text);
-                    cmd.Parameters.AddWithValue("@MAKH", txt_TenKH.Text);
-                    cmd.Parameters.AddWithValue("@MABAN", cbo_Ban.SelectedValue.ToString());
-                    cmd.Parameters.AddWithValue("@MADV", maks_time.Text);
                     cmd.ExecuteNonQuery();
                     connection.Close();
                     MessageBox.Show("Thêm khách hàng thành công");
                 }
                 else
                 {
-                    MessageBox.Show("Mã khách hàng đã tồn tại");
+                   
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+            try
+            {
+                using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True"))
+                {
+                    //cập nhật bàn trống thành đang sử dụng
+                    connection.Open();
+                    string updatett = "SELECT*FROM BANBIA Update BANBIA set TINHTRANG=N'Đang sử dụng' where MABAN='"+ cbo_Ban.SelectedValue.ToString() + "' ";
+                    SqlCommand insertString = new SqlCommand(updatett,connection);
+                    insertString.ExecuteNonQuery();
 
+                    //thêm danh sách đăng kí
+                    if (lstv_menu.Items.Count != 0)
+                    {
+                        // Thêm dữ liệu vào bảng DANGKI
+                        string insertDK = "INSERT INTO DANGKY (MABAN, MAKH, MADV, NGAYDANGKY, SOLUONG) VALUES (@MABAN, @MAKH, @MADV, @NGAYDANGKY, @SOLUONG)";
 
-        }
+                        foreach (ListViewItem item in lstv_menu.Items)
+                        {
+                            SqlCommand cmdDANGKI = new SqlCommand(insertDK, connection);
+                            cmdDANGKI.Parameters.AddWithValue("@MABAN", cbo_Ban.SelectedValue.ToString());
+                            cmdDANGKI.Parameters.AddWithValue("@MAKH", txt_makh.Text);
+                            cmdDANGKI.Parameters.AddWithValue("@MADV", item.Tag as string); // Lấy MADV từ thuộc tính Tag của ListViewItem
+                            cmdDANGKI.Parameters.AddWithValue("@NGAYDANGKY", DateTime.Now);
+                            cmdDANGKI.Parameters.AddWithValue("@SOLUONG", item.SubItems[1].Text);
+                            cmdDANGKI.ExecuteNonQuery();
+                        }
+                    }
+                    else
+                    {
+                        string mk = "dv06";
+                        int sl = 0;
+                        string insertDK = "INSERT INTO DANGKY (MABAN, MAKH, MADV, NGAYDANGKY, SOLUONG) VALUES (@MABAN, @MAKH, @MADV, @NGAYDANGKY, @SOLUONG)";
+                        SqlCommand cmdDANGKI = new SqlCommand(insertDK, connection);
+                        cmdDANGKI.Parameters.AddWithValue("@MABAN", cbo_Ban.SelectedValue.ToString());
+                        cmdDANGKI.Parameters.AddWithValue("@MAKH", txt_makh.Text);
+                        cmdDANGKI.Parameters.AddWithValue("@MADV", mk); // MADV mặc định
+                        cmdDANGKI.Parameters.AddWithValue("@NGAYDANGKY", DateTime.Now);
+                        cmdDANGKI.Parameters.AddWithValue("@SOLUONG", sl);
+                        cmdDANGKI.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+            Load_cboBan();
+        }    
+     
     }
 }

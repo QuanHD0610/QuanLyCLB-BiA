@@ -15,8 +15,8 @@ namespace DoAn_QuanLyCLB_Bi_a
     public partial class form_LichSu : Form
     {
 
-        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-47T7FNC\\SQLEXPRESS;Initial Catalog=QLPHONGBIA;Integrated Security=True");
-        //SqlConnection connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");
+        //SqlConnection connection = new SqlConnection("Data Source=DESKTOP-47T7FNC\\SQLEXPRESS;Initial Catalog=QLPHONGBIA;Integrated Security=True");
+        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-F109BTE;Initial Catalog=QLPHONGBIA;Integrated Security=True");
 
         public form_LichSu()
         {
@@ -26,7 +26,7 @@ namespace DoAn_QuanLyCLB_Bi_a
         {
             connection.Open();
             // Thực hiện truy vấn SQL
-            string query = "SELECT MACTHD,CTHOADON.MADON,MAKH,DICHVU.MADV,MABAN,TENDV,SOLUONG FROM CTHOADON,DANGKY,DICHVU WHERE CTHOADON.MADON = DANGKY.MADON AND DICHVU.MADV=DANGKY.MADV";
+            string query = "SELECT MAKH,DICHVU.MADV,MABAN,TENDV,SOLUONG,NGAYDANGKY FROM DANGKY,DICHVU WHERE  DANGKY.MADV =DICHVU.MADV";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
 

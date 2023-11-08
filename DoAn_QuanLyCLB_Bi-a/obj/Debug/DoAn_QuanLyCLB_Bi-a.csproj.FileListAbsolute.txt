@@ -34,3 +34,4 @@ E:\HK5\.NET\DoAn\QuanLyCLB-BiA\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi-a
 E:\HK5\.NET\DoAn\QuanLyCLB-BiA\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi-a.exe
 E:\HK5\.NET\DoAn\QuanLyCLB-BiA\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi-a.pdb
 >>>>>>> 551b4564107e5ab4be8d706b4d71d5cd90e5d6bc
+D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.Form1_LichSu.resources

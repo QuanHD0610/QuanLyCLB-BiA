@@ -35,6 +35,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btn_datSting = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_datCoCa = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,13 +43,19 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btn_datTraDa = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_makh = new System.Windows.Forms.TextBox();
+            this.btn_xoa = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_SDT = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_TenKH = new System.Windows.Forms.TextBox();
-            this.lstv_menu = new System.Windows.Forms.ListView();
             this.btn_datban = new System.Windows.Forms.Button();
+            this.lstv_menu = new System.Windows.Forms.ListView();
+            this.nuoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_clearAll = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cbo_Ban = new System.Windows.Forms.ComboBox();
@@ -59,50 +66,43 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btn_CafeSua = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.btn_BacXiu = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btn_datPessi = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbo_SapXep = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
-            this.nuoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_xoa = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txt_maKh = new System.Windows.Forms.TextBox();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel3.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label6
@@ -172,6 +172,17 @@
             this.label9.Size = new System.Drawing.Size(42, 16);
             this.label9.TabIndex = 1;
             this.label9.Text = "Sting";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources._string;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(121, 63);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
             // label5
             // 
@@ -256,6 +267,17 @@
             this.label11.TabIndex = 1;
             this.label11.Text = "Trà đá";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+            this.pictureBox4.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources.trada;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(121, 63);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
@@ -263,22 +285,55 @@
             this.panel3.Controls.Add(this.btn_xoa);
             this.panel3.Controls.Add(this.groupBox2);
             this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Controls.Add(this.lstv_menu);
             this.panel3.Controls.Add(this.btn_datban);
+            this.panel3.Controls.Add(this.lstv_menu);
             this.panel3.Controls.Add(this.btn_clearAll);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(553, 126);
+            this.panel3.Location = new System.Drawing.Point(577, 126);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(372, 446);
+            this.panel3.Size = new System.Drawing.Size(371, 446);
             this.panel3.TabIndex = 6;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txt_makh);
+            this.groupBox3.Location = new System.Drawing.Point(198, 296);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(168, 46);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tạo đơn";
+            // 
+            // txt_makh
+            // 
+            this.txt_makh.Location = new System.Drawing.Point(20, 15);
+            this.txt_makh.Name = "txt_makh";
+            this.txt_makh.Size = new System.Drawing.Size(142, 22);
+            this.txt_makh.TabIndex = 0;
+            // 
+            // btn_xoa
+            // 
+            this.btn_xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(47)))), ((int)(((byte)(144)))));
+            this.btn_xoa.DialogResult = System.Windows.Forms.DialogResult.Ignore;
+            this.btn_xoa.FlatAppearance.BorderSize = 0;
+            this.btn_xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xoa.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_xoa.Location = new System.Drawing.Point(0, 307);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(172, 28);
+            this.btn_xoa.TabIndex = 4;
+            this.btn_xoa.Text = "Xóa món vừa chọn";
+            this.btn_xoa.UseVisualStyleBackColor = false;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txt_SDT);
-            this.groupBox2.Location = new System.Drawing.Point(183, 390);
+            this.groupBox2.Location = new System.Drawing.Point(198, 398);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(168, 46);
-            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Số điện thoại";
             // 
@@ -287,15 +342,15 @@
             this.txt_SDT.Location = new System.Drawing.Point(20, 15);
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(142, 22);
-            this.txt_SDT.TabIndex = 9;
+            this.txt_SDT.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txt_TenKH);
-            this.groupBox1.Location = new System.Drawing.Point(183, 340);
+            this.groupBox1.Location = new System.Drawing.Point(198, 348);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(168, 46);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tên Khách Hàng";
             // 
@@ -304,7 +359,23 @@
             this.txt_TenKH.Location = new System.Drawing.Point(20, 15);
             this.txt_TenKH.Name = "txt_TenKH";
             this.txt_TenKH.Size = new System.Drawing.Size(142, 22);
-            this.txt_TenKH.TabIndex = 9;
+            this.txt_TenKH.TabIndex = 0;
+            // 
+            // btn_datban
+            // 
+            this.btn_datban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(47)))), ((int)(((byte)(144)))));
+            this.btn_datban.DialogResult = System.Windows.Forms.DialogResult.Ignore;
+            this.btn_datban.FlatAppearance.BorderSize = 0;
+            this.btn_datban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_datban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_datban.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_datban.Location = new System.Drawing.Point(0, 388);
+            this.btn_datban.Name = "btn_datban";
+            this.btn_datban.Size = new System.Drawing.Size(172, 28);
+            this.btn_datban.TabIndex = 6;
+            this.btn_datban.Text = "Đặt bàn";
+            this.btn_datban.UseVisualStyleBackColor = false;
+            this.btn_datban.Click += new System.EventHandler(this.btn_datban_Click);
             // 
             // lstv_menu
             // 
@@ -316,28 +387,22 @@
             this.lstv_menu.HideSelection = false;
             this.lstv_menu.Location = new System.Drawing.Point(1, 104);
             this.lstv_menu.Name = "lstv_menu";
-            this.lstv_menu.Size = new System.Drawing.Size(369, 186);
+            this.lstv_menu.Size = new System.Drawing.Size(490, 186);
             this.lstv_menu.TabIndex = 1;
             this.lstv_menu.UseCompatibleStateImageBehavior = false;
             this.lstv_menu.ItemActivate += new System.EventHandler(this.lstv_menu_ItemActivate);
             this.lstv_menu.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lstv_menu_ItemChecked);
             this.lstv_menu.SelectedIndexChanged += new System.EventHandler(this.lstv_menu_SelectedIndexChanged);
             // 
-            // btn_datban
+            // nuoc
             // 
-            this.btn_datban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(47)))), ((int)(((byte)(144)))));
-            this.btn_datban.DialogResult = System.Windows.Forms.DialogResult.Ignore;
-            this.btn_datban.FlatAppearance.BorderSize = 0;
-            this.btn_datban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_datban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_datban.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_datban.Location = new System.Drawing.Point(2, 390);
-            this.btn_datban.Name = "btn_datban";
-            this.btn_datban.Size = new System.Drawing.Size(172, 28);
-            this.btn_datban.TabIndex = 5;
-            this.btn_datban.Text = "Đặt bàn";
-            this.btn_datban.UseVisualStyleBackColor = false;
-            this.btn_datban.Click += new System.EventHandler(this.btn_datban_Click);
+            this.nuoc.Text = "Danh sách nước";
+            this.nuoc.Width = 200;
+            // 
+            // sl
+            // 
+            this.sl.Text = "Số lượng";
+            this.sl.Width = 100;
             // 
             // btn_clearAll
             // 
@@ -347,10 +412,10 @@
             this.btn_clearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clearAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clearAll.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_clearAll.Location = new System.Drawing.Point(1, 347);
+            this.btn_clearAll.Location = new System.Drawing.Point(0, 348);
             this.btn_clearAll.Name = "btn_clearAll";
             this.btn_clearAll.Size = new System.Drawing.Size(172, 28);
-            this.btn_clearAll.TabIndex = 4;
+            this.btn_clearAll.TabIndex = 5;
             this.btn_clearAll.Text = "Xóa tất cả lựa chọn";
             this.btn_clearAll.UseVisualStyleBackColor = false;
             this.btn_clearAll.Click += new System.EventHandler(this.btn_clearAll_Click);
@@ -365,7 +430,7 @@
             this.panel4.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.panel4.Location = new System.Drawing.Point(0, 1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(369, 97);
+            this.panel4.Size = new System.Drawing.Size(491, 97);
             this.panel4.TabIndex = 0;
             // 
             // cbo_Ban
@@ -374,7 +439,7 @@
             this.cbo_Ban.Location = new System.Drawing.Point(198, 45);
             this.cbo_Ban.Name = "cbo_Ban";
             this.cbo_Ban.Size = new System.Drawing.Size(148, 24);
-            this.cbo_Ban.TabIndex = 3;
+            this.cbo_Ban.TabIndex = 1;
             // 
             // label16
             // 
@@ -395,7 +460,7 @@
             this.maks_time.Mask = "00:00";
             this.maks_time.Name = "maks_time";
             this.maks_time.Size = new System.Drawing.Size(100, 27);
-            this.maks_time.TabIndex = 1;
+            this.maks_time.TabIndex = 0;
             this.maks_time.ValidatingType = typeof(System.DateTime);
             // 
             // label3
@@ -456,6 +521,17 @@
             this.label13.TabIndex = 1;
             this.label13.Text = "Cafe sữa";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources.bacxiu;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(121, 63);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.label14);
@@ -503,6 +579,18 @@
             this.label15.TabIndex = 1;
             this.label15.Text = "Bạc xỉu";
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
+            this.pictureBox6.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources.bacxiu;
+            this.pictureBox6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.InitialImage")));
+            this.pictureBox6.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(121, 63);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
+            // 
             // btn_datPessi
             // 
             this.btn_datPessi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(47)))), ((int)(((byte)(144)))));
@@ -530,6 +618,17 @@
             this.panel6.Size = new System.Drawing.Size(121, 147);
             this.panel6.TabIndex = 5;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources.pess;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(121, 63);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
@@ -537,8 +636,20 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(74, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(851, 69);
+            this.panel1.Size = new System.Drawing.Size(874, 69);
             this.panel1.TabIndex = 4;
+            // 
+            // button9
+            // 
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.Location = new System.Drawing.Point(933, 10);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(39, 42);
+            this.button9.TabIndex = 6;
+            this.button9.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -578,13 +689,24 @@
             this.panel5.Size = new System.Drawing.Size(121, 147);
             this.panel5.TabIndex = 4;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources.coca;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // cbo_SapXep
             // 
             this.cbo_SapXep.FormattingEnabled = true;
             this.cbo_SapXep.Location = new System.Drawing.Point(27, 33);
             this.cbo_SapXep.Name = "cbo_SapXep";
             this.cbo_SapXep.Size = new System.Drawing.Size(121, 24);
-            this.cbo_SapXep.TabIndex = 3;
+            this.cbo_SapXep.TabIndex = 0;
             // 
             // label2
             // 
@@ -602,133 +724,11 @@
             this.txt_TimKiem.Size = new System.Drawing.Size(147, 22);
             this.txt_TimKiem.TabIndex = 1;
             // 
-            // nuoc
-            // 
-            this.nuoc.Text = "Danh sách nước";
-            this.nuoc.Width = 200;
-            // 
-            // sl
-            // 
-            this.sl.Text = "Số lượng";
-            this.sl.Width = 100;
-            // 
-            // btn_xoa
-            // 
-            this.btn_xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(47)))), ((int)(((byte)(144)))));
-            this.btn_xoa.DialogResult = System.Windows.Forms.DialogResult.Ignore;
-            this.btn_xoa.FlatAppearance.BorderSize = 0;
-            this.btn_xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_xoa.Location = new System.Drawing.Point(2, 306);
-            this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(172, 28);
-            this.btn_xoa.TabIndex = 12;
-            this.btn_xoa.Text = "Xóa món vừa chọn";
-            this.btn_xoa.UseVisualStyleBackColor = false;
-            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
-            // 
-            // button9
-            // 
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.Location = new System.Drawing.Point(798, 10);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(39, 42);
-            this.button9.TabIndex = 6;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
-            this.pictureBox6.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources.bacxiu;
-            this.pictureBox6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.InitialImage")));
-            this.pictureBox6.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(121, 63);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources.bacxiu;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(121, 63);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
-            this.pictureBox4.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources.trada;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(121, 63);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources._string;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(121, 63);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources.pess;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(121, 63);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources.coca;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.txt_maKh);
-            this.groupBox3.Location = new System.Drawing.Point(183, 295);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(168, 46);
-            this.groupBox3.TabIndex = 13;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Thêm mã khách hàng";
-            // 
-            // txt_maKh
-            // 
-            this.txt_maKh.Location = new System.Drawing.Point(20, 15);
-            this.txt_maKh.Name = "txt_maKh";
-            this.txt_maKh.Size = new System.Drawing.Size(142, 22);
-            this.txt_maKh.TabIndex = 9;
-            // 
             // Form_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1055, 607);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -737,9 +737,13 @@
             this.Load += new System.EventHandler(this.Form_Menu_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -748,24 +752,20 @@
             this.panel4.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -826,6 +826,6 @@
         private System.Windows.Forms.ColumnHeader sl;
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txt_maKh;
+        private System.Windows.Forms.TextBox txt_makh;
     }
 }
