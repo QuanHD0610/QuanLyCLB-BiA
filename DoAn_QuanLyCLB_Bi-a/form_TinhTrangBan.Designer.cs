@@ -33,37 +33,50 @@
             this.btn_XuatHoaDon = new System.Windows.Forms.Button();
             this.Lst_DanhSachMon = new System.Windows.Forms.ListView();
             this.maker_sogio = new System.Windows.Forms.MaskedTextBox();
-            this.txt_Tienban = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btn_loc = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_themban = new System.Windows.Forms.Button();
             this.cbo_ban = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tongTien = new System.Windows.Forms.Label();
-            this.txt_tenkh = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_MaBan = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.dtv_DanhSachBan = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_MaKH = new System.Windows.Forms.TextBox();
+            this.txt_tongtien = new System.Windows.Forms.TextBox();
+            this.btn_dangsudung = new System.Windows.Forms.Button();
+            this.btn_bantrong = new System.Windows.Forms.Button();
+            this.txt_timban = new System.Windows.Forms.TextBox();
+            this.btn_themban = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_SDT = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_tenkh = new System.Windows.Forms.TextBox();
+            this.txt_tinhtrang = new System.Windows.Forms.TextBox();
+            this.labell = new System.Windows.Forms.Label();
             this.maked_giovao = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.MADON = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tongTien = new System.Windows.Forms.Label();
+            this.dtv_DanhSachBan = new System.Windows.Forms.DataGridView();
+            this.MABAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GIOVAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENBAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TINHTRANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrangTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_Tienban = new System.Windows.Forms.TextBox();
+            this.btn_timban = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtv_DanhSachBan)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -111,41 +124,19 @@
             // 
             // maker_sogio
             // 
-            this.maker_sogio.Location = new System.Drawing.Point(759, 139);
+            this.maker_sogio.Location = new System.Drawing.Point(759, 138);
             this.maker_sogio.Name = "maker_sogio";
             this.maker_sogio.Size = new System.Drawing.Size(100, 22);
             this.maker_sogio.TabIndex = 14;
             // 
-            // txt_Tienban
-            // 
-            this.txt_Tienban.Location = new System.Drawing.Point(962, 141);
-            this.txt_Tienban.Name = "txt_Tienban";
-            this.txt_Tienban.Size = new System.Drawing.Size(96, 22);
-            this.txt_Tienban.TabIndex = 13;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(896, 147);
+            this.label7.Location = new System.Drawing.Point(878, 107);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 16);
             this.label7.TabIndex = 12;
             this.label7.Text = "Tiền bàn";
-            // 
-            // btn_loc
-            // 
-            this.btn_loc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(47)))), ((int)(((byte)(144)))));
-            this.btn_loc.DialogResult = System.Windows.Forms.DialogResult.Ignore;
-            this.btn_loc.FlatAppearance.BorderSize = 0;
-            this.btn_loc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_loc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_loc.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_loc.Location = new System.Drawing.Point(153, 56);
-            this.btn_loc.Name = "btn_loc";
-            this.btn_loc.Size = new System.Drawing.Size(114, 28);
-            this.btn_loc.TabIndex = 11;
-            this.btn_loc.Text = "Bàn Trống";
-            this.btn_loc.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -155,7 +146,6 @@
             this.label6.Size = new System.Drawing.Size(69, 16);
             this.label6.TabIndex = 10;
             this.label6.Text = "Tổng Tiền";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -165,21 +155,6 @@
             this.label5.Size = new System.Drawing.Size(77, 16);
             this.label5.TabIndex = 9;
             this.label5.Text = "Số giờ chơi ";
-            // 
-            // btn_themban
-            // 
-            this.btn_themban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(47)))), ((int)(((byte)(144)))));
-            this.btn_themban.DialogResult = System.Windows.Forms.DialogResult.Ignore;
-            this.btn_themban.FlatAppearance.BorderSize = 0;
-            this.btn_themban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_themban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_themban.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_themban.Location = new System.Drawing.Point(17, 56);
-            this.btn_themban.Name = "btn_themban";
-            this.btn_themban.Size = new System.Drawing.Size(114, 28);
-            this.btn_themban.TabIndex = 8;
-            this.btn_themban.Text = "Thêm Bàn";
-            this.btn_themban.UseVisualStyleBackColor = false;
             // 
             // cbo_ban
             // 
@@ -203,7 +178,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(364, 18);
+            this.label3.Location = new System.Drawing.Point(96, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 18);
             this.label3.TabIndex = 5;
@@ -214,39 +189,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(364, 60);
+            this.label2.Location = new System.Drawing.Point(96, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 18);
             this.label2.TabIndex = 4;
             this.label2.Text = "Đang sử dụng";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel4.Location = new System.Drawing.Point(295, 14);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(63, 32);
-            this.panel4.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Red;
-            this.panel3.Location = new System.Drawing.Point(293, 52);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(65, 28);
-            this.panel3.TabIndex = 2;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(777, 14);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(39, 42);
-            this.button4.TabIndex = 2;
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -262,11 +209,22 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.txt_MaBan);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.txt_MaKH);
+            this.panel2.Controls.Add(this.txt_tongtien);
+            this.panel2.Controls.Add(this.btn_dangsudung);
+            this.panel2.Controls.Add(this.btn_bantrong);
+            this.panel2.Controls.Add(this.txt_timban);
+            this.panel2.Controls.Add(this.btn_themban);
+            this.panel2.Controls.Add(this.groupBox2);
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Controls.Add(this.txt_tinhtrang);
+            this.panel2.Controls.Add(this.labell);
             this.panel2.Controls.Add(this.maked_giovao);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.tongTien);
-            this.panel2.Controls.Add(this.txt_tenkh);
-            this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.dtv_DanhSachBan);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
@@ -276,21 +234,170 @@
             this.panel2.Controls.Add(this.maker_sogio);
             this.panel2.Controls.Add(this.txt_Tienban);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.btn_loc);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.btn_themban);
+            this.panel2.Controls.Add(this.btn_timban);
             this.panel2.Controls.Add(this.cbo_ban);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(76, 114);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1066, 533);
             this.panel2.TabIndex = 4;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(882, 69);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 16);
+            this.label12.TabIndex = 40;
+            this.label12.Text = "MaBan";
+            // 
+            // txt_MaBan
+            // 
+            this.txt_MaBan.Location = new System.Drawing.Point(946, 66);
+            this.txt_MaBan.Name = "txt_MaBan";
+            this.txt_MaBan.Size = new System.Drawing.Size(96, 22);
+            this.txt_MaBan.TabIndex = 39;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(678, 75);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 16);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "MaKH";
+            // 
+            // txt_MaKH
+            // 
+            this.txt_MaKH.Location = new System.Drawing.Point(759, 71);
+            this.txt_MaKH.Name = "txt_MaKH";
+            this.txt_MaKH.Size = new System.Drawing.Size(100, 22);
+            this.txt_MaKH.TabIndex = 37;
+            // 
+            // txt_tongtien
+            // 
+            this.txt_tongtien.Location = new System.Drawing.Point(790, 368);
+            this.txt_tongtien.Name = "txt_tongtien";
+            this.txt_tongtien.Size = new System.Drawing.Size(96, 22);
+            this.txt_tongtien.TabIndex = 36;
+            // 
+            // btn_dangsudung
+            // 
+            this.btn_dangsudung.BackColor = System.Drawing.Color.Red;
+            this.btn_dangsudung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dangsudung.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btn_dangsudung.Location = new System.Drawing.Point(17, 75);
+            this.btn_dangsudung.Name = "btn_dangsudung";
+            this.btn_dangsudung.Size = new System.Drawing.Size(73, 27);
+            this.btn_dangsudung.TabIndex = 35;
+            this.btn_dangsudung.UseVisualStyleBackColor = false;
+            // 
+            // btn_bantrong
+            // 
+            this.btn_bantrong.BackColor = System.Drawing.Color.Blue;
+            this.btn_bantrong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_bantrong.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btn_bantrong.Location = new System.Drawing.Point(17, 42);
+            this.btn_bantrong.Name = "btn_bantrong";
+            this.btn_bantrong.Size = new System.Drawing.Size(73, 27);
+            this.btn_bantrong.TabIndex = 34;
+            this.btn_bantrong.UseVisualStyleBackColor = false;
+            this.btn_bantrong.Click += new System.EventHandler(this.btn_bantrong_Click_1);
+            // 
+            // txt_timban
+            // 
+            this.txt_timban.Location = new System.Drawing.Point(369, 61);
+            this.txt_timban.Multiline = true;
+            this.txt_timban.Name = "txt_timban";
+            this.txt_timban.Size = new System.Drawing.Size(215, 40);
+            this.txt_timban.TabIndex = 33;
+            // 
+            // btn_themban
+            // 
+            this.btn_themban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(47)))), ((int)(((byte)(144)))));
+            this.btn_themban.DialogResult = System.Windows.Forms.DialogResult.Ignore;
+            this.btn_themban.FlatAppearance.BorderSize = 0;
+            this.btn_themban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_themban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_themban.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_themban.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources.icons8_edit_30;
+            this.btn_themban.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_themban.Location = new System.Drawing.Point(225, 14);
+            this.btn_themban.Name = "btn_themban";
+            this.btn_themban.Size = new System.Drawing.Size(138, 39);
+            this.btn_themban.TabIndex = 32;
+            this.btn_themban.Text = "       Sửa bàn";
+            this.btn_themban.UseVisualStyleBackColor = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txt_SDT);
+            this.groupBox2.Location = new System.Drawing.Point(885, 14);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 52);
+            this.groupBox2.TabIndex = 29;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "SĐT";
+            // 
+            // txt_SDT
+            // 
+            this.txt_SDT.Location = new System.Drawing.Point(17, 24);
+            this.txt_SDT.Name = "txt_SDT";
+            this.txt_SDT.Size = new System.Drawing.Size(140, 22);
+            this.txt_SDT.TabIndex = 22;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_tenkh);
+            this.groupBox1.Location = new System.Drawing.Point(679, 14);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(180, 52);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tên Khách Hàng";
+            // 
+            // txt_tenkh
+            // 
+            this.txt_tenkh.Location = new System.Drawing.Point(6, 24);
+            this.txt_tenkh.Name = "txt_tenkh";
+            this.txt_tenkh.Size = new System.Drawing.Size(174, 22);
+            this.txt_tenkh.TabIndex = 22;
+            // 
+            // txt_tinhtrang
+            // 
+            this.txt_tinhtrang.Location = new System.Drawing.Point(946, 141);
+            this.txt_tinhtrang.Name = "txt_tinhtrang";
+            this.txt_tinhtrang.Size = new System.Drawing.Size(96, 22);
+            this.txt_tinhtrang.TabIndex = 27;
+            // 
+            // labell
+            // 
+            this.labell.AutoSize = true;
+            this.labell.Location = new System.Drawing.Point(878, 144);
+            this.labell.Name = "labell";
+            this.labell.Size = new System.Drawing.Size(66, 16);
+            this.labell.TabIndex = 26;
+            this.labell.Text = "Tình trạng";
+            // 
+            // maked_giovao
+            // 
+            this.maked_giovao.Location = new System.Drawing.Point(759, 104);
+            this.maked_giovao.Name = "maked_giovao";
+            this.maked_giovao.Size = new System.Drawing.Size(100, 22);
+            this.maked_giovao.TabIndex = 25;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(676, 109);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 16);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Giờ Vào";
             // 
             // tongTien
             // 
@@ -301,39 +408,81 @@
             this.tongTien.Size = new System.Drawing.Size(0, 16);
             this.tongTien.TabIndex = 23;
             // 
-            // txt_tenkh
-            // 
-            this.txt_tenkh.Location = new System.Drawing.Point(788, 24);
-            this.txt_tenkh.Name = "txt_tenkh";
-            this.txt_tenkh.Size = new System.Drawing.Size(221, 22);
-            this.txt_tenkh.TabIndex = 22;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(676, 27);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 16);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Tên Khách hàng";
-            // 
             // dtv_DanhSachBan
             // 
             this.dtv_DanhSachBan.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dtv_DanhSachBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtv_DanhSachBan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MADON,
-            this.TENKH,
+            this.MABAN,
+            this.MaKH,
             this.SDT,
             this.GIOVAO,
             this.TENBAN,
-            this.TINHTRANG});
+            this.TINHTRANG,
+            this.TinhTrangTT});
             this.dtv_DanhSachBan.Location = new System.Drawing.Point(3, 124);
             this.dtv_DanhSachBan.Name = "dtv_DanhSachBan";
             this.dtv_DanhSachBan.RowHeadersWidth = 51;
             this.dtv_DanhSachBan.RowTemplate.Height = 24;
             this.dtv_DanhSachBan.Size = new System.Drawing.Size(651, 375);
             this.dtv_DanhSachBan.TabIndex = 20;
+            // 
+            // MABAN
+            // 
+            this.MABAN.DataPropertyName = "MABAN";
+            this.MABAN.HeaderText = "Mã bàn";
+            this.MABAN.MinimumWidth = 6;
+            this.MABAN.Name = "MABAN";
+            this.MABAN.Width = 60;
+            // 
+            // MaKH
+            // 
+            this.MaKH.DataPropertyName = "MaKH";
+            this.MaKH.HeaderText = "Mã KH";
+            this.MaKH.MinimumWidth = 6;
+            this.MaKH.Name = "MaKH";
+            this.MaKH.Width = 60;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.FillWeight = 90F;
+            this.SDT.HeaderText = "SDT";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.Width = 90;
+            // 
+            // GIOVAO
+            // 
+            this.GIOVAO.DataPropertyName = "GIOVAO";
+            this.GIOVAO.HeaderText = "Giờ Vào";
+            this.GIOVAO.MinimumWidth = 6;
+            this.GIOVAO.Name = "GIOVAO";
+            this.GIOVAO.Width = 70;
+            // 
+            // TENBAN
+            // 
+            this.TENBAN.DataPropertyName = "TENBAN";
+            this.TENBAN.HeaderText = "Tiền Bàn";
+            this.TENBAN.MinimumWidth = 6;
+            this.TENBAN.Name = "TENBAN";
+            this.TENBAN.Width = 125;
+            // 
+            // TINHTRANG
+            // 
+            this.TINHTRANG.DataPropertyName = "TINHTRANG";
+            this.TINHTRANG.HeaderText = "Tình Trạng";
+            this.TINHTRANG.MinimumWidth = 6;
+            this.TINHTRANG.Name = "TINHTRANG";
+            this.TINHTRANG.Width = 125;
+            // 
+            // TinhTrangTT
+            // 
+            this.TinhTrangTT.DataPropertyName = "TinhTrangTT";
+            this.TinhTrangTT.HeaderText = "Tình trạng TT";
+            this.TinhTrangTT.MinimumWidth = 6;
+            this.TinhTrangTT.Name = "TinhTrangTT";
+            this.TinhTrangTT.Width = 125;
             // 
             // label9
             // 
@@ -351,6 +500,30 @@
             this.label8.Size = new System.Drawing.Size(2, 500);
             this.label8.TabIndex = 18;
             // 
+            // txt_Tienban
+            // 
+            this.txt_Tienban.Location = new System.Drawing.Point(946, 101);
+            this.txt_Tienban.Name = "txt_Tienban";
+            this.txt_Tienban.Size = new System.Drawing.Size(96, 22);
+            this.txt_Tienban.TabIndex = 13;
+            // 
+            // btn_timban
+            // 
+            this.btn_timban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(47)))), ((int)(((byte)(144)))));
+            this.btn_timban.DialogResult = System.Windows.Forms.DialogResult.Ignore;
+            this.btn_timban.FlatAppearance.BorderSize = 0;
+            this.btn_timban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_timban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_timban.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_timban.Image = global::DoAn_QuanLyCLB_Bi_a.Properties.Resources.icons8_find_35;
+            this.btn_timban.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_timban.Location = new System.Drawing.Point(228, 61);
+            this.btn_timban.Name = "btn_timban";
+            this.btn_timban.Size = new System.Drawing.Size(135, 40);
+            this.btn_timban.TabIndex = 8;
+            this.btn_timban.Text = "      Tìm Bàn";
+            this.btn_timban.UseVisualStyleBackColor = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
@@ -361,69 +534,17 @@
             this.panel1.Size = new System.Drawing.Size(1068, 69);
             this.panel1.TabIndex = 3;
             // 
-            // maked_giovao
+            // button4
             // 
-            this.maked_giovao.Location = new System.Drawing.Point(759, 84);
-            this.maked_giovao.Name = "maked_giovao";
-            this.maked_giovao.Size = new System.Drawing.Size(100, 22);
-            this.maked_giovao.TabIndex = 25;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(676, 89);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 16);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Giờ Vào";
-            // 
-            // MADON
-            // 
-            this.MADON.DataPropertyName = "MADON";
-            this.MADON.HeaderText = "MaDK";
-            this.MADON.MinimumWidth = 6;
-            this.MADON.Name = "MADON";
-            this.MADON.Width = 60;
-            // 
-            // TENKH
-            // 
-            this.TENKH.DataPropertyName = "TENKH";
-            this.TENKH.HeaderText = "Tên Khách Hàng";
-            this.TENKH.MinimumWidth = 6;
-            this.TENKH.Name = "TENKH";
-            this.TENKH.Width = 140;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.FillWeight = 90F;
-            this.SDT.HeaderText = "SDT";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            this.SDT.Width = 110;
-            // 
-            // GIOVAO
-            // 
-            this.GIOVAO.DataPropertyName = "GIOVAO";
-            this.GIOVAO.HeaderText = "Giờ Vào";
-            this.GIOVAO.MinimumWidth = 6;
-            this.GIOVAO.Name = "GIOVAO";
-            this.GIOVAO.Width = 90;
-            // 
-            // TENBAN
-            // 
-            this.TENBAN.DataPropertyName = "TENBAN";
-            this.TENBAN.HeaderText = "Tiền Bàn";
-            this.TENBAN.MinimumWidth = 6;
-            this.TENBAN.Name = "TENBAN";
-            // 
-            // TINHTRANG
-            // 
-            this.TINHTRANG.DataPropertyName = "TINHTRANG";
-            this.TINHTRANG.HeaderText = "Tình Trạng";
-            this.TINHTRANG.MinimumWidth = 6;
-            this.TINHTRANG.Name = "TINHTRANG";
-            this.TINHTRANG.Width = 120;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(777, 14);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(39, 42);
+            this.button4.TabIndex = 2;
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // form_TinhTrangBan
             // 
@@ -437,6 +558,10 @@
             this.Load += new System.EventHandler(this.form_TinhTrangBan_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtv_DanhSachBan)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -450,18 +575,14 @@
         private System.Windows.Forms.Button btn_XuatHoaDon;
         private System.Windows.Forms.ListView Lst_DanhSachMon;
         private System.Windows.Forms.MaskedTextBox maker_sogio;
-        private System.Windows.Forms.TextBox txt_Tienban;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btn_loc;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btn_themban;
+        private System.Windows.Forms.Button btn_timban;
         private System.Windows.Forms.ComboBox cbo_ban;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
@@ -469,16 +590,31 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dtv_DanhSachBan;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_tenkh;
         private System.Windows.Forms.Label tongTien;
         private System.Windows.Forms.MaskedTextBox maked_giovao;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MADON;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENKH;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txt_SDT;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txt_tinhtrang;
+        private System.Windows.Forms.Label labell;
+        private System.Windows.Forms.TextBox txt_timban;
+        private System.Windows.Forms.Button btn_themban;
+        private System.Windows.Forms.TextBox txt_Tienban;
+        private System.Windows.Forms.Button btn_dangsudung;
+        private System.Windows.Forms.Button btn_bantrong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MABAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIOVAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENBAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn TINHTRANG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrangTT;
+        private System.Windows.Forms.TextBox txt_tongtien;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt_MaKH;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txt_MaBan;
     }
 }

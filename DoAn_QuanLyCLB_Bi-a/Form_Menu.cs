@@ -32,7 +32,6 @@ namespace DoAn_QuanLyCLB_Bi_a
         public void Load_cboBan()
         {
             // Clear the existing items in the ComboBox
-            cbo_Ban.Items.Clear();
 
             // Load the ComboBox with updated data
             DataSet ds = new DataSet();
@@ -179,6 +178,7 @@ namespace DoAn_QuanLyCLB_Bi_a
                 selectedItem.BeginEdit();
             }
         }
+
         public bool ktkhoa(string ma)
         {
             try
@@ -212,6 +212,13 @@ namespace DoAn_QuanLyCLB_Bi_a
             {
                 return false;
             }
+        }
+        public void removetxt()
+        {
+            txt_TenKH.Clear();
+            txt_TimKiem.Clear();
+            txt_SDT.Clear();
+            txt_makh.Clear();
         }
         private void btn_datban_Click(object sender, EventArgs e)
         {
@@ -284,13 +291,29 @@ namespace DoAn_QuanLyCLB_Bi_a
                         cmdDANGKI.Parameters.AddWithValue("@SOLUONG", sl);
                         cmdDANGKI.ExecuteNonQuery();
                     }
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+            try
+            {
+                connection.Open();
+                string insertHD = "INSERT INTO HoaDon (MAKH, MABAN) VALUES (@MAKH, @MABAN)";
+                SqlCommand cmdHoaDon = new SqlCommand(insertHD, connection);      
+                cmdHoaDon.Parameters.AddWithValue("@MAKH", txt_makh.Text);
+                cmdHoaDon.Parameters.AddWithValue("@MABAN", cbo_Ban.SelectedValue.ToString());
+                cmdHoaDon.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+
             Load_cboBan();
+            removetxt();
         }    
      
     }

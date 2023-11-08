@@ -93,6 +93,76 @@ namespace DoAn_QuanLyCLB_Bi_a.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_301 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-301", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancel_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cancel-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancel_30__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cancel-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_delete_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-delete-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_edit_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-edit-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_find_35 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-find-35", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_password_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-password-30", resourceCulture);
@@ -106,6 +176,26 @@ namespace DoAn_QuanLyCLB_Bi_a.Properties {
         internal static System.Drawing.Bitmap icons8_password_301 {
             get {
                 object obj = ResourceManager.GetObject("icons8-password-301", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_print_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-print-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_save_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-save-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
