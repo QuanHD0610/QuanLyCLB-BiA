@@ -145,8 +145,6 @@ namespace DoAn_QuanLyCLB_Bi_a
                 MessageBox.Show("Lỗi: " + ex.Message);
             }     
             Loadlst_Mon();      
-            
-
  
         }
 

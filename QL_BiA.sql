@@ -41,20 +41,10 @@ FROM DANGKY
 INNER JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH
 INNER JOIN BANBIA ON DANGKY.MABAN = BANBIA.MABAN;
 
-GO
-CREATE TRIGGER tr_AutoUpdateTongTG
-ON KHACHHANG
-AFTER INSERT, UPDATE
-AS
-BEGIN
-    UPDATE KHACHHANG
-    SET TONGTG = CONVERT(TIME, DATEADD(MINUTE,
-                    DATEDIFF(MINUTE, KHACHHANG.GIOVAO, GETDATE()),
-                    '00:00:00'))
-    FROM KHACHHANG
-    INNER JOIN inserted ON KHACHHANG.MAKH = inserted.MAKH;
-END;
-
+update KHACHHANG
+set TONGTG= CONVERT(TIME, DATEADD(MINUTE,
+           DATEDIFF(MINUTE, GIOVAO, GETDATE()),
+           '00:00:00'))
 GO
 CREATE TRIGGER tr_AutoUpdateGioRa
 ON KHACHHANG
@@ -107,21 +97,21 @@ CREATE TABLE BANBIA
 -- Thêm dữ liệu vào bảng BANBIA cho các loại bàn bi-a
 INSERT INTO BANBIA (MABAN, TENBAN, LOAIBAN, GIATIEN, TINHTRANG, TINHTRANGTT) VALUES
     ('BB01', N'Bàn pool 1', N'Bi-a không lỗ', 10000, N'Trống', N'Thanh toán chưa đủ'),
-    ('BB02', N'Bàn Carom 1', N'Bi-a không lỗ', 12000, N'Trống', N'Thanh toán chưa đủ'),
-    ('BB03', N'Bàn Snooker 1', N'Bi-a không lỗ', 15000, N'Trống', N'Thanh toán chưa đủ'),
-    ('BB04', N'Bàn pool 7', N'Bi-a lỗ', 20000, N'Trống', N'Thanh toán chưa đủ'),
-    ('BB05', N'Bàn Carom 7', N'Bi-a lỗ', 22000, N'Trống', N'Thanh toán chưa đủ'),
-    ('BB06', N'Bàn Snooker 7', N'Bi-a lỗ', 25000, N'Trống', N'Thanh toán chưa đủ'),
-    ('BB07', N'Bàn Carom 2', N'Bi-a không lỗ', 12000, N'Trống', N'Thanh toán chưa đủ'),
-    ('BB08', N'Bàn pool 2', N'Bi-a lỗ', 20000, N'Đang sử dụng', N'Thanh toán đủ'),
-    ('BB09', N'Bàn Snooker 2', N'Bi-a lỗ', 25000, N'Trống', N'Thanh toán chưa đủ'),
-    ('BB10', N'Bàn pool 3', N'Bi-a lỗ', 20000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB02', N'Bàn pool 2', N'Bi-a không lỗ', 12000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB03', N'Bàn pool 3', N'Bi-a không lỗ', 15000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB04', N'Bàn pool 4', N'Bi-a lỗ', 20000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB05', N'Bàn pool 5', N'Bi-a lỗ', 22000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB06', N'Bàn pool 6', N'Bi-a lỗ', 25000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB07', N'Bàn pool 7', N'Bi-a không lỗ', 12000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB08', N'Bàn pool 8', N'Bi-a lỗ', 20000, N'Đang sử dụng', N'Thanh toán đủ'),
+    ('BB09', N'Bàn Snooker 1', N'Bi-a lỗ', 25000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB10', N'Bàn Snooker 2', N'Bi-a lỗ', 20000, N'Trống', N'Thanh toán chưa đủ'),
     ('BB11', N'Bàn Snooker 3', N'Bi-a không lỗ', 15000, N'Đang sử dụng', N'Thanh toán đủ'),
-    ('BB12', N'Bàn pool 4', N'Bi-a lỗ', 20000, N'Trống', N'Thanh toán chưa đủ'),
-    ('BB13', N'Bàn Snooker 4', N'Bi-a không lỗ', 15000, N'Trống', N'Thanh toán chưa đủ'),
-    ('BB14', N'Bàn pool 5', N'Bi-a lỗ', 20000, N'Trống', N'Thanh toán chưa đủ'),
-    ('BB15', N'Bàn Carom 3', N'Bi-a không lỗ', 12000, N'Trống', N'Thanh toán chưa đủ'),
-    ('BB16', N'Bàn pool 6', N'Bi-a lỗ', 20000, N'Đang sử dụng', N'Thanh toán đủ');
+    ('BB12', N'Bàn Snooker 4', N'Bi-a lỗ', 20000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB13', N'Bàn Snooker 5', N'Bi-a không lỗ', 15000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB14', N'Bàn Snooker 6', N'Bi-a lỗ', 20000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB15', N'Bàn Snooker 7', N'Bi-a không lỗ', 12000, N'Trống', N'Thanh toán chưa đủ'),
+    ('BB16', N'Bàn Snooker 8', N'Bi-a lỗ', 20000, N'Đang sử dụng', N'Thanh toán đủ');
 
 SELECT*FROM BANBIA
 UPDATE BANBIA
@@ -235,13 +225,14 @@ SET TONGTIENDV = (
     WHERE
         HOADON.MAKH = DANGKY.MAKH
         AND HOADON.MABAN = BANBIA.MABAN
+	Group by  BANBIA.MABAN
 );
 
 -- Cập nhật tiền bàn cho hóa đơn
 UPDATE HOADON
 SET TONGTIENBAN = (
     SELECT TOP 1
-        ISNULL(GIATIEN * DATEDIFF(MINUTE, KHACHHANG.GIOVAO, GETDATE()) / 60/60/60/100, 0)
+        ISNULL(CAST(DATEDIFF(MINUTE,KHACHHANG.GIOVAO,GETDATE() ) AS FLOAT) / 60.0 / 60.0/1000/2.5 * CAST(GIATIEN AS DECIMAL(10, 2)), 0)
     FROM
         BANBIA
         INNER JOIN DANGKY ON BANBIA.MABAN = DANGKY.MABAN
@@ -249,19 +240,21 @@ SET TONGTIENBAN = (
     WHERE
         HOADON.MAKH = DANGKY.MAKH
         AND HOADON.MABAN = BANBIA.MABAN
-    ORDER BY DANGKY.NGAYDANGKY DESC
 );
+
 
 -- Cập nhật tổng thành tiền cho hóa đơn
 UPDATE HOADON
 SET THANHTIEN = TONGTIENDV + TONGTIENBAN;
 END;
 
-
+select sum(thanhtien) from HOADON
 
 select*from HOADON
 select*from DANGKY
-
+select*from DICHVU
+select*from KHACHHANG
+select*from BANBIA
 
 -----------------------------------------------------------------
 CREATE TABLE GAYBIA
