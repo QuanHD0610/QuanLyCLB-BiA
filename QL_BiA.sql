@@ -28,6 +28,45 @@ INSERT INTO KHACHHANG (MAKH, TENKH, SDT, GIOVAO, GIARA) VALUES
     ('KH09', N'Phạm Văn Ái', '0369847201', '09:30:00', '17:45:00'),
     ('KH10', N'Hoàng Thị Kiều Linh', '0765432198', '11:00:00', '19:30:00');
 SELECT*FROM KHACHHANG
+
+
+SELECT KHACHHANG.MAKH,
+       BANBIA.MABAN,
+       KHACHHANG.GIOVAO,
+       CONVERT(TIME, GETDATE()) AS GIARA,
+        CONVERT(TIME, DATEADD(MINUTE,
+           DATEDIFF(MINUTE, GIOVAO, GETDATE()),
+           '00:00:00')) AS TONGTG
+FROM DANGKY
+INNER JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH
+INNER JOIN BANBIA ON DANGKY.MABAN = BANBIA.MABAN;
+
+GO
+CREATE TRIGGER tr_AutoUpdateTongTG
+ON KHACHHANG
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    UPDATE KHACHHANG
+    SET TONGTG = CONVERT(TIME, DATEADD(MINUTE,
+                    DATEDIFF(MINUTE, KHACHHANG.GIOVAO, GETDATE()),
+                    '00:00:00'))
+    FROM KHACHHANG
+    INNER JOIN inserted ON KHACHHANG.MAKH = inserted.MAKH;
+END;
+
+GO
+CREATE TRIGGER tr_AutoUpdateGioRa
+ON KHACHHANG
+AFTER UPDATE
+AS
+BEGIN
+    UPDATE KHACHHANG
+    SET GIARA = CONVERT(TIME, GETDATE())
+    FROM KHACHHANG
+    INNER JOIN inserted ON KHACHHANG.MAKH = inserted.MAKH;
+END;
+
 -----------------------------------------------------------------
 GO
 CREATE TABLE NHANVIEN
@@ -85,6 +124,8 @@ INSERT INTO BANBIA (MABAN, TENBAN, LOAIBAN, GIATIEN, TINHTRANG, TINHTRANGTT) VAL
     ('BB16', N'Bàn pool 6', N'Bi-a lỗ', 20000, N'Đang sử dụng', N'Thanh toán đủ');
 
 SELECT*FROM BANBIA
+UPDATE BANBIA
+SET TINHTRANG=N'Trống'
 -----------------------------------------------------------------
 GO
 CREATE TABLE DICHVU
@@ -137,23 +178,19 @@ GO
 INSERT INTO DANGKY (MAKH, MADV, MABAN, NGAYDANGKY, SOLUONG) VALUES
     ('KH01', 'DV01', 'BB01', GETDATE(), 2), -- Example with current date and quantity
     ('KH02', 'DV02', 'BB02', GETDATE(), 3), -- Example with current date and quantity
-    ('KH03', 'DV03', 'BB03', GETDATE(), 1), -- Example with current date and quantity
-    ('KH04', 'DV04', 'BB04', GETDATE(), 4), -- Example with current date and quantity
-    ('KH05', 'DV03', 'BB05', GETDATE(), 2), -- Example with current date and quantity
-    ('KH06', 'DV06', 'BB06', GETDATE(), 3), -- Example with current date and quantity
-    ('KH07', 'DV01', 'BB07', GETDATE(), 2), -- Example with current date and quantity
-    ('KH08', 'DV03', 'BB08', GETDATE(), 1), -- Example with current date and quantity
-    ('KH09', 'DV05', 'BB09', GETDATE(), 4); -- Example with current date and quantity
+    ('KH03', 'DV03', 'BB03', GETDATE(), 1) -- Example with current date and quantity
 
+go
 SELECT*FROM DANGKY
 -----------------------------------------------------------------
 SELECT KHACHHANG.MAKH, BANBIA.MABAN, TENKH, SDT, GIOVAO, TENBAN, TINHTRANG FROM DANGKY, KHACHHANG, BANBIA WHERE DANGKY.MABAN = BANBIA.MABAN  and KHACHHANG.MAKH=DANGKY.MAKH
 
-
+go
 CREATE TABLE HOADON
 (
 	MAKH NCHAR(10) NOT NULL,
 	MABAN NCHAR(10)NOT NULL,
+	NGAYTT DATETIME,
 	TONGTIENDV INT,
 	TONGTIENBAN INT,
 	THANHTIEN INT
@@ -171,39 +208,60 @@ ADD CONSTRAINT FK_HOADON_DICHVU FOREIGN KEY(MABAN) REFERENCES BANBIA(MABAN)
 
 select*from HOADON
 --trigger update hoadon
+-- Cập nhật tổng tiền dịch vụ cho các hóa đơn đã thay đổi
+-- Thay đổi kiểu dữ liệu của cột TONGTIENBAN sang DECIMAL
+ALTER TABLE HOADON
+ALTER COLUMN THANHTIEN DECIMAL(18, 2);
+
+
 go
-CREATE TRIGGER tr_UpdateHOADON
+-- Tạo trigger cho việc tự động cập nhật hóa đơn
+CREATE TRIGGER tr_AutoUpdateHoaDon
 ON DANGKY
 AFTER INSERT, UPDATE, DELETE
 AS
 BEGIN
-    -- Cập nhật tổng tiền dịch vụ cho các hóa đơn đã thay đổi
-    UPDATE HOADON
-    SET TONGTIENDV = (
-        SELECT ISNULL(SUM(DICHVU.GIA * DANGKY.SOLUONG), 0)
-        FROM DANGKY
-        INNER JOIN inserted ON DANGKY.MAKH = inserted.MAKH
-        INNER JOIN DICHVU ON DICHVU.MADV = DANGKY.MADV
-    )
-    WHERE HOADON.MAKH IN (SELECT DISTINCT MAKH FROM inserted);
+    -- Cập nhật tiền dịch vụ cho hóa đơn
+    -- Cập nhật tiền dịch vụ cho hóa đơn
+UPDATE HOADON
+SET TONGTIENDV = (
+    SELECT
+        ISNULL(SUM(DICHVU.GIA * DANGKY.SOLUONG), 0)
+    FROM
+        BANBIA
+        LEFT JOIN DANGKY ON DANGKY.MABAN = BANBIA.MABAN
+        LEFT JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH
+        LEFT JOIN DICHVU ON DICHVU.MADV = DANGKY.MADV
+    WHERE
+        HOADON.MAKH = DANGKY.MAKH
+        AND HOADON.MABAN = BANBIA.MABAN
+);
 
-    -- Cập nhật tổng tiền bàn cho các hóa đơn đã thay đổi
-    UPDATE HOADON
-    SET TONGTIENBAN = (
-        SELECT ISNULL(SUM(BANBIA.GIATIEN * DATEDIFF(MINUTE, KHACHHANG.TONGTG, GETDATE())), 0)
-        FROM BANBIA
-        INNER JOIN inserted ON BANBIA.MABAN = inserted.MABAN
-        INNER JOIN KHACHHANG ON KHACHHANG.MAKH = inserted.MAKH
-    )
-    WHERE HOADON.MABAN IN (SELECT DISTINCT MABAN FROM inserted);
+-- Cập nhật tiền bàn cho hóa đơn
+UPDATE HOADON
+SET TONGTIENBAN = (
+    SELECT TOP 1
+        ISNULL(GIATIEN * DATEDIFF(MINUTE, KHACHHANG.GIOVAO, GETDATE()) / 60/60/60/100, 0)
+    FROM
+        BANBIA
+        INNER JOIN DANGKY ON BANBIA.MABAN = DANGKY.MABAN
+        INNER JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH
+    WHERE
+        HOADON.MAKH = DANGKY.MAKH
+        AND HOADON.MABAN = BANBIA.MABAN
+    ORDER BY DANGKY.NGAYDANGKY DESC
+);
 
-    -- Cập nhật tổng thành tiền cho các hóa đơn đã thay đổi
-    UPDATE HOADON
-    SET THANHTIEN = TONGTIENDV + TONGTIENBAN
-    WHERE HOADON.MAKH IN (SELECT DISTINCT MAKH FROM inserted);
+-- Cập nhật tổng thành tiền cho hóa đơn
+UPDATE HOADON
+SET THANHTIEN = TONGTIENDV + TONGTIENBAN;
 END;
 
-go
+
+
+select*from HOADON
+select*from DANGKY
+
 
 -----------------------------------------------------------------
 CREATE TABLE GAYBIA
@@ -330,19 +388,38 @@ WHERE BANBIA.TINHTRANG = N'Đang sử dụng'
     LEFT JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH
     LEFT JOIN DICHVU ON DICHVU.MADV = DANGKY.MADV
 
- SELECT
-        BANBIA.MABAN,
-        TENBAN,
-        GIATIEN,
-        SUM(DICHVU.GIA * DANGKY.SOLUONG) AS GIA_DICHVU_TONG,
-        GIOVAO,
-        TENKH,
-        CONVERT(TIME, DATEADD(MINUTE, DATEDIFF(MINUTE, GIOVAO, GETDATE()), '00:00:00')) AS sogiochoi
-    FROM BANBIA
+-- Đảm bảo rằng kiểu dữ liệu của GIATIEN và DATEDIFF phù hợp, ví dụ kiểu decimal(10, 2)
+ALTER TABLE BANBIA
+ALTER COLUMN GIATIEN DECIMAL(10, 2);
+
+SELECT
+    BANBIA.MABAN,
+    TENBAN,
+    GIATIEN,
+    SUM(DICHVU.GIA * DANGKY.SOLUONG) AS GIA_DICHVU_TONG,
+    GIOVAO,
+    MIN(TENKH) AS TENKH,
+    DATEDIFF(MINUTE, GIOVAO, GETDATE()) / 60.0 AS sogiochoi, -- Số giờ chơi
+    GIATIEN * (DATEDIFF(MINUTE, GIOVAO, GETDATE()) / 60.0) AS TienBan -- Tiền bàn
+FROM
+    BANBIA
     LEFT JOIN DANGKY ON DANGKY.MABAN = BANBIA.MABAN
     LEFT JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH
     LEFT JOIN DICHVU ON DICHVU.MADV = DANGKY.MADV
-    WHERE BANBIA.TINHTRANG = N'Đang sử dụng'
-        AND BANBIA.MABAN = 'BB05'
-    GROUP BY BANBIA.MABAN, TENBAN, GIATIEN, GIOVAO, TENKH;
+WHERE
+    BANBIA.TINHTRANG = N'Đang sử dụng'
+    AND BANBIA.MABAN = 'BB03'
+GROUP BY
+    BANBIA.MABAN, TENBAN, GIATIEN, GIOVAO;
+
+
+
+ SELECT
+     TENDV ,SOLUONG, GIA * SOLUONG AS TotalCost
+     FROM BANBIA
+     LEFT JOIN DANGKY ON DANGKY.MABAN = BANBIA.MABAN
+     LEFT JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH
+     LEFT JOIN DICHVU ON DICHVU.MADV = DANGKY.MADV
+     WHERE BANBIA.TINHTRANG = N'Đang sử dụng'
+         AND BANBIA.MABAN ='BB03'
 

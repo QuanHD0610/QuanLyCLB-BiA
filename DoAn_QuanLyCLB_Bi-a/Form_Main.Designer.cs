@@ -267,7 +267,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1182, 5);
+            this.panel3.Size = new System.Drawing.Size(1382, 5);
             this.panel3.TabIndex = 6;
             // 
             // pan_Main
@@ -278,7 +278,7 @@
             this.pan_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_Main.Location = new System.Drawing.Point(206, 5);
             this.pan_Main.Name = "pan_Main";
-            this.pan_Main.Size = new System.Drawing.Size(976, 699);
+            this.pan_Main.Size = new System.Drawing.Size(1176, 699);
             this.pan_Main.TabIndex = 7;
             // 
             // panel2
@@ -287,14 +287,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 694);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(976, 5);
+            this.panel2.Size = new System.Drawing.Size(1176, 5);
             this.panel2.TabIndex = 0;
             // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 704);
+            this.ClientSize = new System.Drawing.Size(1382, 704);
             this.Controls.Add(this.pan_Main);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel3);

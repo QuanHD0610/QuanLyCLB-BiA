@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_TinhTrangBan));
             this.btn_ThanhToan = new System.Windows.Forms.Button();
             this.btn_XuatHoaDon = new System.Windows.Forms.Button();
-            this.Lst_DanhSachMon = new System.Windows.Forms.ListView();
             this.maker_sogio = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -74,11 +73,18 @@
             this.btn_timban = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
+            this.dtv_DsNuoc = new System.Windows.Forms.DataGridView();
+            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_tongtienban = new System.Windows.Forms.TextBox();
+            this.txt = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtv_DanhSachBan)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtv_DsNuoc)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_ThanhToan
@@ -113,15 +119,6 @@
             this.btn_XuatHoaDon.UseVisualStyleBackColor = false;
             this.btn_XuatHoaDon.Click += new System.EventHandler(this.btn_XuatHoaDon_Click);
             // 
-            // Lst_DanhSachMon
-            // 
-            this.Lst_DanhSachMon.HideSelection = false;
-            this.Lst_DanhSachMon.Location = new System.Drawing.Point(681, 199);
-            this.Lst_DanhSachMon.Name = "Lst_DanhSachMon";
-            this.Lst_DanhSachMon.Size = new System.Drawing.Size(377, 150);
-            this.Lst_DanhSachMon.TabIndex = 15;
-            this.Lst_DanhSachMon.UseCompatibleStateImageBehavior = false;
-            // 
             // maker_sogio
             // 
             this.maker_sogio.Location = new System.Drawing.Point(759, 138);
@@ -141,7 +138,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(715, 371);
+            this.label6.Location = new System.Drawing.Point(863, 373);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 16);
             this.label6.TabIndex = 10;
@@ -209,6 +206,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.txt_tongtienban);
+            this.panel2.Controls.Add(this.txt);
+            this.panel2.Controls.Add(this.dtv_DsNuoc);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.txt_MaBan);
             this.panel2.Controls.Add(this.label10);
@@ -230,7 +230,6 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.btn_ThanhToan);
             this.panel2.Controls.Add(this.btn_XuatHoaDon);
-            this.panel2.Controls.Add(this.Lst_DanhSachMon);
             this.panel2.Controls.Add(this.maker_sogio);
             this.panel2.Controls.Add(this.txt_Tienban);
             this.panel2.Controls.Add(this.label7);
@@ -280,7 +279,7 @@
             // 
             // txt_tongtien
             // 
-            this.txt_tongtien.Location = new System.Drawing.Point(790, 368);
+            this.txt_tongtien.Location = new System.Drawing.Point(938, 370);
             this.txt_tongtien.Name = "txt_tongtien";
             this.txt_tongtien.Size = new System.Drawing.Size(96, 22);
             this.txt_tongtien.TabIndex = 36;
@@ -295,6 +294,7 @@
             this.btn_dangsudung.Size = new System.Drawing.Size(73, 27);
             this.btn_dangsudung.TabIndex = 35;
             this.btn_dangsudung.UseVisualStyleBackColor = false;
+            this.btn_dangsudung.Click += new System.EventHandler(this.btn_dangsudung_Click_1);
             // 
             // btn_bantrong
             // 
@@ -546,6 +546,60 @@
             this.button4.TabIndex = 2;
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // dtv_DsNuoc
+            // 
+            this.dtv_DsNuoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtv_DsNuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtv_DsNuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TenDV,
+            this.soluong,
+            this.TotalCost});
+            this.dtv_DsNuoc.Location = new System.Drawing.Point(681, 199);
+            this.dtv_DsNuoc.Name = "dtv_DsNuoc";
+            this.dtv_DsNuoc.RowHeadersWidth = 51;
+            this.dtv_DsNuoc.RowTemplate.Height = 24;
+            this.dtv_DsNuoc.Size = new System.Drawing.Size(361, 151);
+            this.dtv_DsNuoc.TabIndex = 41;
+            // 
+            // TenDV
+            // 
+            this.TenDV.DataPropertyName = "TENDV";
+            this.TenDV.HeaderText = "Danh sách nước";
+            this.TenDV.MinimumWidth = 6;
+            this.TenDV.Name = "TenDV";
+            // 
+            // soluong
+            // 
+            this.soluong.DataPropertyName = "SOLUONG";
+            this.soluong.HeaderText = "SL";
+            this.soluong.MinimumWidth = 6;
+            this.soluong.Name = "soluong";
+            this.soluong.Width = 30;
+            // 
+            // TotalCost
+            // 
+            this.TotalCost.DataPropertyName = "TotalCost";
+            this.TotalCost.HeaderText = "Giá tiền";
+            this.TotalCost.MinimumWidth = 6;
+            this.TotalCost.Name = "TotalCost";
+            this.TotalCost.Width = 70;
+            // 
+            // txt_tongtienban
+            // 
+            this.txt_tongtienban.Location = new System.Drawing.Point(759, 370);
+            this.txt_tongtienban.Name = "txt_tongtienban";
+            this.txt_tongtienban.Size = new System.Drawing.Size(96, 22);
+            this.txt_tongtienban.TabIndex = 43;
+            // 
+            // txt
+            // 
+            this.txt.AutoSize = true;
+            this.txt.Location = new System.Drawing.Point(684, 373);
+            this.txt.Name = "txt";
+            this.txt.Size = new System.Drawing.Size(60, 16);
+            this.txt.TabIndex = 42;
+            this.txt.Text = "Tiền bàn";
+            // 
             // form_TinhTrangBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -565,6 +619,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtv_DanhSachBan)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtv_DsNuoc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -573,7 +628,6 @@
 
         private System.Windows.Forms.Button btn_ThanhToan;
         private System.Windows.Forms.Button btn_XuatHoaDon;
-        private System.Windows.Forms.ListView Lst_DanhSachMon;
         private System.Windows.Forms.MaskedTextBox maker_sogio;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -616,5 +670,11 @@
         private System.Windows.Forms.TextBox txt_MaKH;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_MaBan;
+        private System.Windows.Forms.DataGridView dtv_DsNuoc;
+        private System.Windows.Forms.TextBox txt_tongtienban;
+        private System.Windows.Forms.Label txt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalCost;
     }
 }

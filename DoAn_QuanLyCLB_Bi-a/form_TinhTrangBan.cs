@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -72,103 +73,81 @@ namespace DoAn_QuanLyCLB_Bi_a
             maker_sogio.ReadOnly = true;
             Databingding(ds.Tables["BanBiA"]);
         }
-        public void Loadlst_Mon()
-        {
-            string strselect = "";
-            SqlDataAdapter da = new SqlDataAdapter(strselect, connection);
-            da.Fill(ds, "BanBiA");
-            dtv_DanhSachBan.DataSource = ds.Tables["BanBiA"];
 
-            // Ẩn các cột không cần thiết
-            dtv_DanhSachBan.Columns["TenKh"].Visible = false;
-            dtv_DanhSachBan.Columns["TenBan"].Visible = false;
+        public void removemon()
+        {
+            if (ds.Tables.Contains("DVNUOC"))
+            {
+                ds.Tables.Remove("DVNUOC");
+                dtv_DsNuoc.DataSource = null;
+                dtv_DsNuoc.Rows.Clear();
+            }
+           
         }
-        private void btn_XuatHoaDon_Click(object sender, EventArgs e)
+        public void Loadlst_Mon()
         {
             try
             {
-                connection.Open();
-
-                string queryString = @"
-        SELECT
-            SUM(GIATIEN * DATEDIFF(MINUTE, GIOVAO, GETDATE())) + SUM(DICHVU.GIA * DANGKY.SOLUONG) AS TotalCost
-        FROM BANBIA
-        LEFT JOIN DANGKY ON DANGKY.MABAN = BANBIA.MABAN
-        LEFT JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH
-        LEFT JOIN DICHVU ON DICHVU.MADV = DANGKY.MADV
-        WHERE BANBIA.TINHTRANG = N'Đang sử dụng'
-            AND BANBIA.MABAN = @MABAN
-    ";
-
-                SqlCommand command = new SqlCommand(queryString, connection);
-                command.Parameters.Add(new SqlParameter("@MABAN", SqlDbType.NVarChar));
-                command.Parameters["@MABAN"].Value = txt_MaBan.Text;
-
-                // Execute the command and get the result
-                object result = command.ExecuteScalar();
-
-                if (result != DBNull.Value)
+                if (connection.State != ConnectionState.Open)
                 {
-                    // Get the total cost as a decimal
-                    decimal totalCost = Convert.ToDecimal(result);
+                    connection.Open();
+                    removemon();
+                    string queryString = @"
+                                            SELECT
+                                                DICHVU.TENDV,
+                                                DANGKY.SOLUONG,
+                                                DICHVU.GIA * DANGKY.SOLUONG AS TotalCost
+                                            FROM BANBIA
+                                            LEFT JOIN DANGKY ON DANGKY.MABAN = BANBIA.MABAN
+                                            LEFT JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH
+                                            LEFT JOIN DICHVU ON DICHVU.MADV = DANGKY.MADV
+                                            WHERE BANBIA.TINHTRANG = N'Đang sử dụng'
+                                                AND BANBIA.MABAN = '" + txt_MaBan.Text + "'";
 
-                    // Create a ListViewItem with the total cost and add it to the ListView
-                    ListViewItem item = new ListViewItem(totalCost.ToString());
-                    Lst_DanhSachMon.Items.Add(item);
+                        SqlDataAdapter da = new SqlDataAdapter(queryString, connection);
+                            da.Fill(ds, "DVNUOC");
+                            dtv_DsNuoc.DataSource = ds.Tables["DVNUOC"];
+
+                    connection.Close();
                 }
-                else
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.ToString());
+            }
+
+        }
+        public void XuatTien()
+        {
+
+        }
+        private void btn_XuatHoaDon_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (connection != null && connection.State != ConnectionState.Open)
                 {
-                    // Handle the case where the result is DBNull (no data found)
-                    MessageBox.Show("No data found for the selected table.");
-                }
+                    connection.Open();                 
+                    string updatestr = @"UPDATE KHACHHANG
+                                 SET TONGTG = CONVERT(TIME, DATEADD(MINUTE,
+                                                 DATEDIFF(MINUTE, KHACHHANG.GIOVAO, GETDATE()),
+                                                 '00:00:00'))
+                                 FROM KHACHHANG";
+                        SqlCommand addtg = new SqlCommand(updatestr, connection);
+                        addtg.ExecuteNonQuery();
 
-                connection.Close();
+                    connection.Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
-            }
+            }     
+            Loadlst_Mon();      
+            
 
-
-        }
-
-        private void btn_bantrong_Click(object sender, EventArgs e)
-        {
-            string strselect = "SELECT BANBIA.MABAN, TENBAN, GIATIEN, TINHTRANG, TINHTRANGTT, KHACHHANG.MAKH, SDT, GIOVAO, TENKH, " +
-                  "CONVERT(TIME, DATEADD(MINUTE, DATEDIFF(MINUTE, GIOVAO, GETDATE()), '00:00:00')) AS TONGTG " +
-                  "FROM BANBIA " +
-                  "LEFT JOIN DANGKY ON DANGKY.MABAN = BANBIA.MABAN " +
-                  "LEFT JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH " +
-                  "WHERE BANBIA.TINHTRANG = N'Trống';";
-
-            SqlDataAdapter da = new SqlDataAdapter(strselect, connection);
-            da.Fill(ds, "Bantrong");
-            dtv_DanhSachBan.DataSource = ds.Tables["Bantrong"];
-
-            // Ẩn các cột không cần thiết
-            dtv_DanhSachBan.Columns["TenKH"].Visible = false;
-            dtv_DanhSachBan.Columns["TenBAN"].Visible = false;
-            Databingding(ds.Tables["BanBiA"]);
-
-        }
-
-        private void btn_dangsudung_Click(object sender, EventArgs e)
-        {
-            string strselectt = "SELECT BANBIA.MABAN, TENBAN, GIATIEN, TINHTRANG, TINHTRANGTT, KHACHHANG.MAKH, SDT, GIOVAO, TENKH, " +
-                 "CONVERT(TIME, DATEADD(MINUTE, DATEDIFF(MINUTE, GIOVAO, GETDATE()), '00:00:00')) AS TONGTG " +
-                 "FROM BANBIA " +
-                 "LEFT JOIN DANGKY ON DANGKY.MABAN = BANBIA.MABAN " +
-                 "LEFT JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH " +
-                 "WHERE BANBIA.TINHTRANG = N'Đang sử dụng';";
-
-            SqlDataAdapter da = new SqlDataAdapter(strselectt, connection);
-            da.Fill(ds, "Bansudung");
-            dtv_DanhSachBan.DataSource = ds.Tables["Bansudung"];
-
-            // Ẩn các cột không cần thiết
-            dtv_DanhSachBan.Columns["TenKH"].Visible = false;
-            dtv_DanhSachBan.Columns["TenBAN"].Visible = false;
-            Databingding(ds.Tables["BanBiA"]);
+ 
         }
 
         private void btn_timban_Click(object sender, EventArgs e)
@@ -212,7 +191,40 @@ namespace DoAn_QuanLyCLB_Bi_a
 
         private void btn_bantrong_Click_1(object sender, EventArgs e)
         {
+            string strselect = "SELECT BANBIA.MABAN, TENBAN, GIATIEN, TINHTRANG, TINHTRANGTT, KHACHHANG.MAKH, SDT, GIOVAO, TENKH, " +
+                "CONVERT(TIME, DATEADD(MINUTE, DATEDIFF(MINUTE, GIOVAO, GETDATE()), '00:00:00')) AS TONGTG " +
+                "FROM BANBIA " +
+                "LEFT JOIN DANGKY ON DANGKY.MABAN = BANBIA.MABAN " +
+                "LEFT JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH " +
+                "WHERE BANBIA.TINHTRANG = N'Trống';";
 
+            SqlDataAdapter da = new SqlDataAdapter(strselect, connection);
+            da.Fill(ds, "Bantrong");
+            dtv_DanhSachBan.DataSource = ds.Tables["Bantrong"];
+
+            // Ẩn các cột không cần thiết
+            dtv_DanhSachBan.Columns["TenKH"].Visible = false;
+            dtv_DanhSachBan.Columns["TenBAN"].Visible = false;
+            Databingding(ds.Tables["BanBiA"]);
+        }
+
+        private void btn_dangsudung_Click_1(object sender, EventArgs e)
+        {
+            string strselectt = "SELECT BANBIA.MABAN, TENBAN, GIATIEN, TINHTRANG, TINHTRANGTT, KHACHHANG.MAKH, SDT, GIOVAO, TENKH, " +
+                "CONVERT(TIME, DATEADD(MINUTE, DATEDIFF(MINUTE, GIOVAO, GETDATE()), '00:00:00')) AS TONGTG " +
+                "FROM BANBIA " +
+                "LEFT JOIN DANGKY ON DANGKY.MABAN = BANBIA.MABAN " +
+                "LEFT JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH " +
+                "WHERE BANBIA.TINHTRANG = N'Đang sử dụng';";
+
+            SqlDataAdapter da = new SqlDataAdapter(strselectt, connection);
+            da.Fill(ds, "Bansudung");
+            dtv_DanhSachBan.DataSource = ds.Tables["Bansudung"];
+
+            // Ẩn các cột không cần thiết
+            dtv_DanhSachBan.Columns["TenKH"].Visible = false;
+            dtv_DanhSachBan.Columns["TenBAN"].Visible = false;
+            Databingding(ds.Tables["BanBiA"]);
         }
     }
 }
