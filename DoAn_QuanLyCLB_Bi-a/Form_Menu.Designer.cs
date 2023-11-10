@@ -81,9 +81,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbo_SapXep = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel8.SuspendLayout();
@@ -113,7 +111,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 16);
             this.label6.TabIndex = 3;
-            this.label6.Text = "12000 Đồng";
+            this.label6.Text = "18000 Đồng";
             // 
             // label7
             // 
@@ -145,7 +143,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 16);
             this.label8.TabIndex = 3;
-            this.label8.Text = "15000 Đồng";
+            this.label8.Text = "20000 Đồng";
             // 
             // btn_datSting
             // 
@@ -192,7 +190,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 16);
             this.label5.TabIndex = 3;
-            this.label5.Text = "12000 Đồng";
+            this.label5.Text = "20000 Đồng";
             // 
             // btn_datCoCa
             // 
@@ -237,9 +235,9 @@
             this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.Location = new System.Drawing.Point(17, 87);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 16);
+            this.label10.Size = new System.Drawing.Size(77, 16);
             this.label10.TabIndex = 3;
-            this.label10.Text = "5000 Đồng";
+            this.label10.Text = "18000 Đồng";
             // 
             // btn_datTraDa
             // 
@@ -493,7 +491,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 16);
             this.label12.TabIndex = 3;
-            this.label12.Text = "20000 Đồng";
+            this.label12.Text = "16000 Đồng";
             // 
             // btn_CafeSua
             // 
@@ -551,7 +549,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(77, 16);
             this.label14.TabIndex = 3;
-            this.label14.Text = "17000 Đồng";
+            this.label14.Text = "16000 Đồng";
             // 
             // btn_BacXiu
             // 
@@ -670,9 +668,7 @@
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.cbo_SapXep);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.txt_TimKiem);
             this.panel2.Location = new System.Drawing.Point(71, 126);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(476, 446);
@@ -700,29 +696,16 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // cbo_SapXep
-            // 
-            this.cbo_SapXep.FormattingEnabled = true;
-            this.cbo_SapXep.Location = new System.Drawing.Point(27, 33);
-            this.cbo_SapXep.Name = "cbo_SapXep";
-            this.cbo_SapXep.Size = new System.Drawing.Size(121, 24);
-            this.cbo_SapXep.TabIndex = 0;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 14);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.Location = new System.Drawing.Point(142, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.Size = new System.Drawing.Size(213, 29);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Sắp xếp";
-            // 
-            // txt_TimKiem
-            // 
-            this.txt_TimKiem.Location = new System.Drawing.Point(203, 33);
-            this.txt_TimKiem.Name = "txt_TimKiem";
-            this.txt_TimKiem.Size = new System.Drawing.Size(147, 22);
-            this.txt_TimKiem.TabIndex = 1;
+            this.label2.Text = "Danh Sách Nước ";
             // 
             // Form_Menu
             // 
@@ -819,9 +802,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ComboBox cbo_SapXep;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_TimKiem;
         private System.Windows.Forms.ColumnHeader nuoc;
         private System.Windows.Forms.ColumnHeader sl;
         private System.Windows.Forms.Button btn_xoa;

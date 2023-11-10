@@ -41,6 +41,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_tongtienban = new System.Windows.Forms.TextBox();
+            this.txt = new System.Windows.Forms.Label();
+            this.dtv_DsNuoc = new System.Windows.Forms.DataGridView();
+            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_MaBan = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -73,18 +79,12 @@
             this.btn_timban = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.dtv_DsNuoc = new System.Windows.Forms.DataGridView();
-            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_tongtienban = new System.Windows.Forms.TextBox();
-            this.txt = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtv_DsNuoc)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtv_DanhSachBan)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtv_DsNuoc)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_ThanhToan
@@ -245,6 +245,61 @@
             this.panel2.Size = new System.Drawing.Size(1066, 533);
             this.panel2.TabIndex = 4;
             // 
+            // txt_tongtienban
+            // 
+            this.txt_tongtienban.Location = new System.Drawing.Point(759, 370);
+            this.txt_tongtienban.Name = "txt_tongtienban";
+            this.txt_tongtienban.Size = new System.Drawing.Size(96, 22);
+            this.txt_tongtienban.TabIndex = 43;
+            // 
+            // txt
+            // 
+            this.txt.AutoSize = true;
+            this.txt.Location = new System.Drawing.Point(684, 373);
+            this.txt.Name = "txt";
+            this.txt.Size = new System.Drawing.Size(60, 16);
+            this.txt.TabIndex = 42;
+            this.txt.Text = "Tiền bàn";
+            // 
+            // dtv_DsNuoc
+            // 
+            this.dtv_DsNuoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtv_DsNuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtv_DsNuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TenDV,
+            this.soluong,
+            this.TotalCost});
+            this.dtv_DsNuoc.Location = new System.Drawing.Point(681, 199);
+            this.dtv_DsNuoc.Name = "dtv_DsNuoc";
+            this.dtv_DsNuoc.RowHeadersWidth = 51;
+            this.dtv_DsNuoc.RowTemplate.Height = 24;
+            this.dtv_DsNuoc.Size = new System.Drawing.Size(361, 151);
+            this.dtv_DsNuoc.TabIndex = 41;
+            // 
+            // TenDV
+            // 
+            this.TenDV.DataPropertyName = "TENDV";
+            this.TenDV.HeaderText = "Danh sách nước";
+            this.TenDV.MinimumWidth = 6;
+            this.TenDV.Name = "TenDV";
+            this.TenDV.Width = 125;
+            // 
+            // soluong
+            // 
+            this.soluong.DataPropertyName = "SOLUONG";
+            this.soluong.HeaderText = "SL";
+            this.soluong.MinimumWidth = 6;
+            this.soluong.Name = "soluong";
+            this.soluong.Width = 30;
+            // 
+            // TotalCost
+            // 
+            this.TotalCost.DataPropertyName = "TotalCost";
+            this.TotalCost.HeaderText = "Giá tiền";
+            this.TotalCost.MinimumWidth = 6;
+            this.TotalCost.Name = "TotalCost";
+            this.TotalCost.Width = 70;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -315,6 +370,7 @@
             this.txt_timban.Name = "txt_timban";
             this.txt_timban.Size = new System.Drawing.Size(215, 40);
             this.txt_timban.TabIndex = 33;
+            this.txt_timban.TextChanged += new System.EventHandler(this.txt_timban_TextChanged);
             // 
             // btn_themban
             // 
@@ -546,60 +602,6 @@
             this.button4.TabIndex = 2;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // dtv_DsNuoc
-            // 
-            this.dtv_DsNuoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtv_DsNuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtv_DsNuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenDV,
-            this.soluong,
-            this.TotalCost});
-            this.dtv_DsNuoc.Location = new System.Drawing.Point(681, 199);
-            this.dtv_DsNuoc.Name = "dtv_DsNuoc";
-            this.dtv_DsNuoc.RowHeadersWidth = 51;
-            this.dtv_DsNuoc.RowTemplate.Height = 24;
-            this.dtv_DsNuoc.Size = new System.Drawing.Size(361, 151);
-            this.dtv_DsNuoc.TabIndex = 41;
-            // 
-            // TenDV
-            // 
-            this.TenDV.DataPropertyName = "TENDV";
-            this.TenDV.HeaderText = "Danh sách nước";
-            this.TenDV.MinimumWidth = 6;
-            this.TenDV.Name = "TenDV";
-            // 
-            // soluong
-            // 
-            this.soluong.DataPropertyName = "SOLUONG";
-            this.soluong.HeaderText = "SL";
-            this.soluong.MinimumWidth = 6;
-            this.soluong.Name = "soluong";
-            this.soluong.Width = 30;
-            // 
-            // TotalCost
-            // 
-            this.TotalCost.DataPropertyName = "TotalCost";
-            this.TotalCost.HeaderText = "Giá tiền";
-            this.TotalCost.MinimumWidth = 6;
-            this.TotalCost.Name = "TotalCost";
-            this.TotalCost.Width = 70;
-            // 
-            // txt_tongtienban
-            // 
-            this.txt_tongtienban.Location = new System.Drawing.Point(759, 370);
-            this.txt_tongtienban.Name = "txt_tongtienban";
-            this.txt_tongtienban.Size = new System.Drawing.Size(96, 22);
-            this.txt_tongtienban.TabIndex = 43;
-            // 
-            // txt
-            // 
-            this.txt.AutoSize = true;
-            this.txt.Location = new System.Drawing.Point(684, 373);
-            this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(60, 16);
-            this.txt.TabIndex = 42;
-            this.txt.Text = "Tiền bàn";
-            // 
             // form_TinhTrangBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -612,6 +614,7 @@
             this.Load += new System.EventHandler(this.form_TinhTrangBan_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtv_DsNuoc)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -619,7 +622,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtv_DanhSachBan)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtv_DsNuoc)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -4,6 +4,9 @@ CREATE DATABASE QLPHONGBIA
 GO
 USE QLPHONGBIA
 
+
+--============================================================================================================
+--1. tạo bảng khách hàng và insert dữ liệu các câu lệnh update truy vấn
 -----------------------------------------------------------------
 CREATE TABLE KHACHHANG
 (
@@ -29,7 +32,7 @@ INSERT INTO KHACHHANG (MAKH, TENKH, SDT, GIOVAO, GIARA) VALUES
     ('KH10', N'Hoàng Thị Kiều Linh', '0765432198', '11:00:00', '19:30:00');
 SELECT*FROM KHACHHANG
 
-
+------------------------------------------------------------------
 SELECT KHACHHANG.MAKH,
        BANBIA.MABAN,
        KHACHHANG.GIOVAO,
@@ -57,7 +60,9 @@ BEGIN
     INNER JOIN inserted ON KHACHHANG.MAKH = inserted.MAKH;
 END;
 
+--============================================================================================================
 -----------------------------------------------------------------
+--2.chỉ có tạo bảng nhân viên và insert dữ liệu cho bảng 
 GO
 CREATE TABLE NHANVIEN
 (
@@ -66,23 +71,29 @@ CREATE TABLE NHANVIEN
 	TUOI INT,
 	DIACHI NVARCHAR(50),
 	SDT NCHAR(10),
-	GIOITINH NCHAR(10)
+	GIOITINH NCHAR(10),
+	CHUCVU NVARCHAR(10),
+	CALAM NVARCHAR(10),
+	LUONG INT
 )
 -----------------------------------------------------------------
 -- Thêm 10 dòng dữ liệu vào bảng NHANVIEN
-INSERT INTO NHANVIEN (MANV, TENNV, TUOI, DIACHI, SDT, GIOITINH) VALUES
-    ('NV01', N'Nguyễn Văn An', 28, N'Hà Nội', '0123456789', N'Nam'),
-    ('NV02', N'Trần Thị Bình', 35, N'Hồ Chí Minh', '0987654321', N'Nữ'),
-    ('NV03', N'Lê Minh Cường', 30, N'Đà Nẵng', '0369847201', N'Nam'),
-    ('NV04', N'Phạm Thanh Duy', 24, N'Hải Phòng', '0765432198', N'Nam'),
-    ('NV05', N'Hoàng Thị Ngọc', 29, N'Cần Thơ', '0897654321', N'Nữ'),
-    ('NV06', N'Nguyễn Văn Đức', 26, N'Hà Tĩnh', '0765432987', N'Nam'),
-    ('NV07', N'Trần Thị Lan', 32, N'Nghệ An', '0123456789', N'Nữ'),
-    ('NV08', N'Lê Minh Hà', 40, N'Quảng Ninh', '0987654321', N'Nữ'),
-    ('NV09', N'Phạm Văn Tùng', 27, N'Quảng Bình', '0369847201', N'Nam'),
-    ('NV10', N'Hoàng Thị Hương', 33, N'Bắc Giang', '0765432198', N'Nữ');
+INSERT INTO NHANVIEN (MANV, TENNV, TUOI, DIACHI, SDT, GIOITINH, CHUCVU, CALAM, LUONG) VALUES
+    ('NV01', N'Nguyễn Văn An', 28, N'Hà Nội', '0123456789', N'Nam', N'Quản lý', N'Ca sáng', 5000000),
+    ('NV02', N'Trần Thị Bình', 35, N'Hồ Chí Minh', '0987654321', N'Nữ', N'Nhân viên', N'Ca chiều', 4000000),
+    ('NV03', N'Lê Minh Cường', 30, N'Đà Nẵng', '0369847201', N'Nam', N'Nhân viên', N'Ca sáng', 4500000),
+    ('NV04', N'Phạm Thanh Duy', 24, N'Hải Phòng', '0765432198', N'Nam', N'Nhân viên', N'Ca chiều', 4300000),
+    ('NV05', N'Hoàng Thị Ngọc', 29, N'Cần Thơ', '0897654321', N'Nữ', N'Nhân viên', N'Ca sáng', 4200000),
+    ('NV06', N'Nguyễn Văn Đức', 26, N'Hà Tĩnh', '0765432987', N'Nam', N'Nhân viên', N'Ca sáng', 4400000),
+    ('NV07', N'Trần Thị Lan', 32, N'Nghệ An', '0123456789', N'Nữ', N'Nhân viên', N'Ca chiều', 4100000),
+    ('NV08', N'Lê Minh Hà', 40, N'Quảng Ninh', '0987654321', N'Nữ', N'Quản lý', N'Ca sáng', 5200000),
+    ('NV09', N'Phạm Văn Tùng', 27, N'Quảng Bình', '0369847201', N'Nam', N'Nhân viên', N'Ca chiều', 4700000),
+    ('NV10', N'Hoàng Thị Hương', 33, N'Bắc Giang', '0765432198', N'Nữ', N'Nhân viên', N'Ca chiều', 4800000);
+
 SELECT*FROM NHANVIEN
+--============================================================================================================
 -----------------------------------------------------------------
+--3. chỉ có tạo bảng và insert dữ liệu vào bảng
 GO
 CREATE TABLE BANBIA
 (
@@ -116,7 +127,10 @@ INSERT INTO BANBIA (MABAN, TENBAN, LOAIBAN, GIATIEN, TINHTRANG, TINHTRANGTT) VAL
 SELECT*FROM BANBIA
 UPDATE BANBIA
 SET TINHTRANG=N'Trống'
+
+--============================================================================================================
 -----------------------------------------------------------------
+--3. tạo bảng và insert dữ liệu cho bảng
 GO
 CREATE TABLE DICHVU
 (
@@ -138,8 +152,13 @@ INSERT INTO DICHVU (MADV, TENDV, GIA, SLKHO) VALUES
     ('DV08', N'Trà đá', 18000, 120),
     ('DV09', N'Cafe sữa ', 16000, 80),
     ('DV010', N'Bạc xĩu', 16000, 80)
+INSERT INTO DICHVU (MADV, TENDV, GIA, SLKHO) VALUES
+    ('DV011', N'Không dùng nước', 0, 100)
+
 	SELECT*FROM DICHVU
+--============================================================================================================
 -----------------------------------------------------------------
+--4. Tạo bảng và các câu lệnh truy vấn trên bảng
 GO
 CREATE TABLE DANGKY
 (
@@ -172,9 +191,13 @@ INSERT INTO DANGKY (MAKH, MADV, MABAN, NGAYDANGKY, SOLUONG) VALUES
 
 go
 SELECT*FROM DANGKY
------------------------------------------------------------------
+
+
 SELECT KHACHHANG.MAKH, BANBIA.MABAN, TENKH, SDT, GIOVAO, TENBAN, TINHTRANG FROM DANGKY, KHACHHANG, BANBIA WHERE DANGKY.MABAN = BANBIA.MABAN  and KHACHHANG.MAKH=DANGKY.MAKH
 
+--============================================================================================================
+-----------------------------------------------------------------
+--5. Tạo bảng hóa đơn và insert dữ liệu cho bảng
 go
 CREATE TABLE HOADON
 (
@@ -195,8 +218,17 @@ ADD CONSTRAINT FK_HOADON_KHACHHANG FOREIGN KEY(MAKH) REFERENCES KHACHHANG(MAKH)
 ALTER TABLE HOADON
 ADD CONSTRAINT FK_HOADON_DICHVU FOREIGN KEY(MABAN) REFERENCES BANBIA(MABAN)
 
+DECLARE @TONGTG TIME = '03:50:00';
 
-select*from HOADON
+
+
+Select*from HOADON
+
+UPDATE HOADON
+SET NGAYTT = DANGKY.NGAYDANGKY
+FROM HOADON
+INNER JOIN DANGKY ON HOADON.MABAN = DANGKY.MABAN;
+
 --trigger update hoadon
 -- Cập nhật tổng tiền dịch vụ cho các hóa đơn đã thay đổi
 -- Thay đổi kiểu dữ liệu của cột TONGTIENBAN sang DECIMAL
@@ -211,7 +243,6 @@ ON DANGKY
 AFTER INSERT, UPDATE, DELETE
 AS
 BEGIN
-    -- Cập nhật tiền dịch vụ cho hóa đơn
     -- Cập nhật tiền dịch vụ cho hóa đơn
 UPDATE HOADON
 SET TONGTIENDV = (
@@ -228,20 +259,21 @@ SET TONGTIENDV = (
 	Group by  BANBIA.MABAN
 );
 
--- Cập nhật tiền bàn cho hóa đơn
 UPDATE HOADON
-SET TONGTIENBAN = (
-    SELECT TOP 1
-        ISNULL(CAST(DATEDIFF(MINUTE,KHACHHANG.GIOVAO,GETDATE() ) AS FLOAT) / 60.0 / 60.0/1000/2.5 * CAST(GIATIEN AS DECIMAL(10, 2)), 0)
-    FROM
-        BANBIA
-        INNER JOIN DANGKY ON BANBIA.MABAN = DANGKY.MABAN
-        INNER JOIN KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH
-    WHERE
-        HOADON.MAKH = DANGKY.MAKH
-        AND HOADON.MABAN = BANBIA.MABAN
+SET TONGTIENBAN =(
+SELECT TOP 1
+    (CAST(DATEDIFF(MINUTE, '00:00:00', TONGTG) AS FLOAT) / 60.0) * CAST(GIATIEN AS DECIMAL(10, 2)) AS TONGTIENBAN
+FROM
+    BANBIA
+INNER JOIN 
+    DANGKY ON BANBIA.MABAN = DANGKY.MABAN
+INNER JOIN 
+    KHACHHANG ON DANGKY.MAKH = KHACHHANG.MAKH
+INNER JOIN 
+    HOADON ON HOADON.MAKH = KHACHHANG.MAKH AND HOADON.MABAN = BANBIA.MABAN
+WHERE
+    BANBIA.MABAN = 'BB04'
 );
-
 
 -- Cập nhật tổng thành tiền cho hóa đơn
 UPDATE HOADON
@@ -256,11 +288,14 @@ select*from DICHVU
 select*from KHACHHANG
 select*from BANBIA
 
+--============================================================================================================
 -----------------------------------------------------------------
+--6. tạo bảng gậy bia lưu thông tin gậy
 CREATE TABLE GAYBIA
 (
 	MAGAY NCHAR(10) NOT NULL  PRIMARY KEY,
 	TENGAY NVARCHAR(100),
+	NGAY DATE,
 	DODAI INT ,
 	SOLUONG  INT ,
 )
@@ -272,7 +307,10 @@ INSERT INTO GAYBIA (MAGAY, TENGAY, DODAI, SOLUONG) VALUES
     ('G03', 'Gay 3', 160, 12),
     ('G04', 'Gay 4', 170, 9);
 SELECT*FROM GAYBIA 
+
+--============================================================================================================
 -----------------------------------------------------------------
+--7.TẠO BẢNG BI-A
 GO
 CREATE TABLE BIA
 (
@@ -288,6 +326,8 @@ INSERT INTO BIA (MABI, TENBIA, SOLUONG) VALUES
     ('B03', 'Bia 9', 110),
     ('B04', 'Bia 18', 90);
 SELECT*FROM BIA
+
+--============================================================================================================
 -----------------------------------------------------------------
 GO
 CREATE TABLE AUTHENTION
@@ -305,6 +345,52 @@ INSERT INTO AUTHENTION(USERNAME, PASS) VALUES
 
 SELECT*FROM AUTHENTION
 
+go
+-- Tạo bảng mới coppy dữ liệu bảng hd
+CREATE TABLE HoaDonCopy (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    MAKH NCHAR(10),
+    MABAN NCHAR(10),
+    TENKH NVARCHAR(50),
+    SDT NCHAR(12),
+    TONGTIENDV DECIMAL(18, 2),
+    TONGTIENBAN DECIMAL(18, 2),
+    THANHTIEN DECIMAL(18, 2),
+	NGAYTT datetime
+);
+
+-- Sao chép dữ liệu từ bảng HoaDon và KHACHHANG vào bảng HoaDonCopy
+INSERT INTO HoaDonCopy (MAKH, MABAN, TENKH, SDT, TONGTIENDV, TONGTIENBAN, THANHTIEN,NGAYTT)
+SELECT HD.MAKH, HD.MABAN, KH.TENKH, KH.SDT, HD.TONGTIENDV, HD.TONGTIENBAN, HD.THANHTIEN,HD.NGAYTT
+FROM HoaDon HD
+INNER JOIN KHACHHANG KH ON HD.MAKH = KH.MAKH;
+
+
+select*from HoaDonCopy
+
+-- Tạo bảng DangKyCopy
+CREATE TABLE DangKyCopy (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    MABAN NVARCHAR(50),
+    MAKH NVARCHAR(50),
+    TENKH NVARCHAR(50),
+    SDT NCHAR(12),
+    MADV NVARCHAR(50),
+    NGAYDANGKY DATETIME,
+    SOLUONG INT
+);
+
+-- Sao chép dữ liệu từ bảng DangKy vào bảng DangKyCopy
+INSERT INTO DangKyCopy (MABAN, MAKH, TENKH, SDT, MADV, NGAYDANGKY, SOLUONG)
+SELECT DK.MABAN, DK.MAKH, KH.TENKH, KH.SDT, DK.MADV, DK.NGAYDANGKY, DK.SOLUONG
+FROM DangKy DK
+INNER JOIN KHACHHANG KH ON DK.MAKH = KH.MAKH;
+
+
+select*from DangKyCopy
+
+DELETE FROM DangKyCopy
+
 
 SELECT*FROM KHACHHANG
 SELECT*FROM NHANVIEN
@@ -312,7 +398,10 @@ SELECT*FROM DANGKY
 SELECT*FROM BANBIA
 SELECT*FROM DICHVU
 
+SELECT*FROM NHANVIEN
+--============================================================================================================
 
+--các câu truy vấn 
 SELECT*FROM DANGKY,KHACHHANG,BANBIA
 
 SELECT MAKH,DICHVU.MADV,MABAN,TENDV,SOLUONG,NGAYDANGKY FROM DANGKY,DICHVU WHERE  DANGKY.MADV =DICHVU.MADV
@@ -415,4 +504,4 @@ GROUP BY
      LEFT JOIN DICHVU ON DICHVU.MADV = DANGKY.MADV
      WHERE BANBIA.TINHTRANG = N'Đang sử dụng'
          AND BANBIA.MABAN ='BB03'
-
+--============================================================================================================

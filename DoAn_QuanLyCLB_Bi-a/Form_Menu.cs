@@ -216,7 +216,7 @@ namespace DoAn_QuanLyCLB_Bi_a
         public void removetxt()
         {
             txt_TenKH.Clear();
-            txt_TimKiem.Clear();
+            lstv_menu.Clear();
             txt_SDT.Clear();
             txt_makh.Clear();
         }

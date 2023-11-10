@@ -57,7 +57,7 @@ namespace DoAn_QuanLyCLB_Bi_a
 
         private void btn_KhuyenMai_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new form_KhuyenMai());
+            OpenChildForm(new form_HoaDon());
         }
 
         private void btn_Kho_Click(object sender, EventArgs e)
@@ -85,6 +85,17 @@ namespace DoAn_QuanLyCLB_Bi_a
         private void button10_Click(object sender, EventArgs e)
         {
             Application.Exit(); 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new thongtin());
+
         }
     }
 }

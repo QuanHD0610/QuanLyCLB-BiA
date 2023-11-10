@@ -10,11 +10,9 @@ using System.Windows.Forms;
 
 namespace DoAn_QuanLyCLB_Bi_a
 {
-
-    public partial class form_KhuyenMai : Form
+    public partial class thongtin : Form
     {
-
-        public form_KhuyenMai()
+        public thongtin()
         {
             InitializeComponent();
         }
