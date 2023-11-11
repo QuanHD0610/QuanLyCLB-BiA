@@ -39,3 +39,9 @@ D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug
 D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.thongtin.resources
 D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.form_Kho.resources
 D:\Hoc\IT\HOCKY_5\CONGNGHE.NET\DoAn_QuanLyCLB_Bi-a\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.form_NhanVien.resources
+E:\HK5\.NET\DoAn\QuanLyCLB-BiA\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.Form_DangNhap.resources
+E:\HK5\.NET\DoAn\QuanLyCLB-BiA\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.form_HoaDon.resources
+E:\HK5\.NET\DoAn\QuanLyCLB-BiA\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.form_Kho.resources
+E:\HK5\.NET\DoAn\QuanLyCLB-BiA\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.form_NhanVien.resources
+E:\HK5\.NET\DoAn\QuanLyCLB-BiA\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.Form_Setting.resources
+E:\HK5\.NET\DoAn\QuanLyCLB-BiA\DoAn_QuanLyCLB_Bi-a\obj\Debug\DoAn_QuanLyCLB_Bi_a.thongtin.resources
